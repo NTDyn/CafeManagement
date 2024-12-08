@@ -118,7 +118,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<StaffGroupLinkPermission>().HasKey(g => g.Link_ID);
             modelBuilder.Entity<StaffGroupLinkPermission>().ToTable("StaffGroupLinkPermissions");
-            modelBuilder.Entity<StaffGroupLinkPermission>().Ignore(e => e.StaffGroup);
+           
 
             modelBuilder.Entity<StoreIngredient>().HasKey(si => si.Store_ID);
             modelBuilder.Entity<StoreIngredient>().ToTable("StoreIngredients");
