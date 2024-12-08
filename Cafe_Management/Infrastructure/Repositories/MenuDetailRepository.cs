@@ -20,6 +20,7 @@ namespace Cafe_Management.Infrastructure.Repositories
             on sg.Product_ID equals sgp.Product_ID
             select new MenuDetail
             {
+                Setup_ID = sg.Setup_ID,
                 Menu_ID = sg.Menu_ID,
                 Product_ID = sg.Product_ID,
                 IsActive = sg.IsActive,

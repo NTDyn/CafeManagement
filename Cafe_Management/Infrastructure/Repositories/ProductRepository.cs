@@ -140,12 +140,14 @@ namespace Cafe_Management.Infrastructure.Repositories
                 if (product.ProductRecipe != null && product.ProductRecipe.Count > 0)
                 {
                     var currentProductRecipe = _productRecipeRepository.GetAllRecipeByProductID(product.Product_ID).Result;
-
+                    
                     foreach (var recipe in product.ProductRecipe)
                     {
+                        recipe.ModifiedDate = DateTime.Now;
                         bool exists = currentProductRecipe.Any(r => r.Ingredient_ID == recipe.Ingredient_ID);
                         if (exists == true)
                         {
+
                             await _productRecipeRepository.UpdateProductRecipe(recipe);
                         }
                         else
@@ -158,6 +160,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                     var deleteProductRecipe = product.ProductRecipe.Where(itemA => !currentProductRecipe.Any(itemB => itemB.Ingredient_ID == itemA.Ingredient_ID)).ToList();
                     foreach (var recipe in deleteProductRecipe)
                     {
+                        recipe.ModifiedDate= DateTime.Now;
                         recipe.IsActive = false;
                     }
                 }
