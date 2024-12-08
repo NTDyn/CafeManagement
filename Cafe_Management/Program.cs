@@ -79,6 +79,18 @@ builder.Services.AddScoped<StaffGroupPermissionLinkService>();
 //Staff
 builder.Services.AddScoped<IStaffGroupRepository, StaffGroupRepository>();
 builder.Services.AddScoped<StaffGroupService>();
+//StoreIngredientService
+builder.Services.AddScoped<IStoreIngredientRepository, StoreIngredientRepository>();
+builder.Services.AddScoped<StoreIngredientService>();
+//StoreIngredientService
+builder.Services.AddScoped<IReceiptRepository, ReceiptRepository>();
+builder.Services.AddScoped<ReceiptService>();
+
+builder.Services.AddScoped<ISpoiledIngredientRepository, SpoiledIngredientRepository>();
+builder.Services.AddScoped<SpoiledIngredientService>();
+
+builder.Services.AddScoped<IBatchRecipeRepository, BatchRecipeRepository>();
+builder.Services.AddScoped<BatchRecipeService>();
 
 var app = builder.Build();
 app.UseCors("CorsApi");

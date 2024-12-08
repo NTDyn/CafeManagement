@@ -54,6 +54,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<BatchRecipe>().HasKey(b => b.BatchRecipe_ID);
             modelBuilder.Entity<BatchRecipe>().ToTable("BatchRecipe");
+            modelBuilder.Entity<BatchRecipe>().Ignore(b => b.Details);
 
             modelBuilder.Entity<BatchRecipeDetail>().HasKey(bd => bd.Detail_ID);
             modelBuilder.Entity<BatchRecipeDetail>().ToTable("BatchRecipeDetail");
@@ -96,6 +97,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<Receipt>().HasKey(p => p.Receipt_ID);
             modelBuilder.Entity<Receipt>().ToTable("Receipt");
+            modelBuilder.Entity<Receipt>().Ignore(p => p.Details);
 
             modelBuilder.Entity<ReceiptDetail>().HasKey(p => p.Detail_ID);
             modelBuilder.Entity<ReceiptDetail>().ToTable("ReceiptDetail");
@@ -105,6 +107,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<SpoiledIngredient>().HasKey(p => p.Spoiled_ID);
             modelBuilder.Entity<SpoiledIngredient>().ToTable("SpoiledIngredients");
+            modelBuilder.Entity<SpoiledIngredient>().Ignore(e=>e.Details);
 
             modelBuilder.Entity<SpoiledIngredientDetail>().HasKey(p => p.SpoildDetail_ID);
             modelBuilder.Entity<SpoiledIngredientDetail>().ToTable("SpoiledIngredientDetails");
