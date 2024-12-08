@@ -27,8 +27,9 @@ namespace Cafe_Management.Infrastructure.Repositories
 
         public async Task AddProductRecipe(ProductRecipe productRecipe)
         {
-
-            
+            productRecipe.ModifiedDate= DateTime.Now;
+            productRecipe.CreatedDate = DateTime.Now;
+            productRecipe.IsActive= true;
             await _context.ProductRecipe.AddAsync(productRecipe);
             await _context.SaveChangesAsync();
         }
