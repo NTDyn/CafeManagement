@@ -7,10 +7,11 @@ namespace Cafe_Management.Core.Entities
     public class StaffGroup
     {
         [Key]
-        public int StaffGroup_ID { get; set; }
-        public string StaffGroup_Name { get; set; }
-        public bool IsActive { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public int? StaffGroup_ID { get; set; }
+        public string? StaffGroup_Name { get; set; }
+        public bool? IsActive { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
+        public List<StaffGroupLinkPermission>? Permissions { get; set; }
     }
 }

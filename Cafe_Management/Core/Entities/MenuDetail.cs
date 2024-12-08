@@ -14,6 +14,7 @@ namespace Cafe_Management.Core.Entities
         public bool? IsActive { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? ModifiedDate { get; set; }
+        public Product? Product { get; set; }
 
 
     }

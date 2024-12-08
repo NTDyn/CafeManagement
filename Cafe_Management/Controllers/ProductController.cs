@@ -124,8 +124,8 @@ namespace Cafe_Management.Controllers
                 await _productService.UpdateProductAsync(product);
                 APIResult result = new APIResult
                 {
-                    Data = product, // Set the added product as data
-                    Message = "Successfully added the product",
+                    Data = await _productService.GetProductByIdAsync(product.Product_ID), // Set the added product as data
+                    Message = "Successfully",
                     Status = 200
                 };
 

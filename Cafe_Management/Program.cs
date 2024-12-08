@@ -61,10 +61,24 @@ builder.Services.AddScoped<ProductRecipeService>();
 // Menu
 builder.Services.AddScoped<IMenuRepository, MenuRepository>();
 builder.Services.AddScoped<MenuService>();
-
+// Menu
+builder.Services.AddScoped<IMenuDetailRepository, MenuDetailRepository>();
+builder.Services.AddScoped<MenuDetailRepository>();
 //Save Image 
 builder.Services.AddScoped<IImageRepository, SaveImageRepository>();
 builder.Services.AddScoped<ImageService>();
+
+//Staff
+builder.Services.AddScoped<IStaffRepository, StaffRepository>();
+builder.Services.AddScoped<StaffRepository>();
+
+//Staff
+builder.Services.AddScoped<IStaffGroupPermissionResponsitory, StaffGroupLinkPermissionRepository>();
+builder.Services.AddScoped<StaffGroupLinkPermissionRepository>();
+
+//Staff
+builder.Services.AddScoped<IStaffGroupRepository, StaffGroupRepository>();
+builder.Services.AddScoped<StaffGroupRepository>();
 
 var app = builder.Build();
 app.UseCors("CorsApi");
