@@ -221,59 +221,6 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Cafe_Management.Controllers.ProductImageController",
-    "Method": "GetImagesByProductId",
-    "RelativePath": "api/ProductImage",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Cafe_Management.Controllers.ProductImageController",
-    "Method": "AddProductImage",
-    "RelativePath": "api/ProductImage",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productImage",
-        "Type": "Cafe_Management.Core.Entities.ProductImage",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Cafe_Management.Controllers.ProductImageController",
-    "Method": "UpdateProductImage",
-    "RelativePath": "api/ProductImage/{productImageId}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "productImageId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "productImage",
-        "Type": "Cafe_Management.Core.Entities.ProductImage",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "Cafe_Management.Controllers.ProductRecipeController",
     "Method": "GetAllRecipeByProductID",
     "RelativePath": "api/ProductRecipe",
@@ -328,13 +275,7 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "supplierId",
-        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -371,16 +312,53 @@
   },
   {
     "ContainingType": "Cafe_Management.Controllers.WarehouseController",
-    "Method": "GetAllWarehouses",
+    "Method": "GetWarehouse",
     "RelativePath": "api/Warehouse",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "WarehouseID",
+        "Name": "warehouse_ID",
         "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "IsRequired": false
+      },
+      {
+        "Name": "IsActive",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.WarehouseController",
+    "Method": "AddWarehouse",
+    "RelativePath": "api/Warehouse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "warehouse",
+        "Type": "Cafe_Management.Core.Entities.Warehouse",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.WarehouseController",
+    "Method": "UpdateWarehouse",
+    "RelativePath": "api/Warehouse",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "warehouse",
+        "Type": "Cafe_Management.Core.Entities.Warehouse",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
