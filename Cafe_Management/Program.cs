@@ -63,22 +63,22 @@ builder.Services.AddScoped<IMenuRepository, MenuRepository>();
 builder.Services.AddScoped<MenuService>();
 // Menu
 builder.Services.AddScoped<IMenuDetailRepository, MenuDetailRepository>();
-builder.Services.AddScoped<MenuDetailRepository>();
+builder.Services.AddScoped<MenuDetailService>();
 //Save Image 
 builder.Services.AddScoped<IImageRepository, SaveImageRepository>();
 builder.Services.AddScoped<ImageService>();
 
 //Staff
 builder.Services.AddScoped<IStaffRepository, StaffRepository>();
-builder.Services.AddScoped<StaffRepository>();
+builder.Services.AddScoped<StaffService>();
 
 //Staff
 builder.Services.AddScoped<IStaffGroupPermissionResponsitory, StaffGroupLinkPermissionRepository>();
-builder.Services.AddScoped<StaffGroupLinkPermissionRepository>();
+builder.Services.AddScoped<StaffGroupPermissionLinkService>();
 
 //Staff
 builder.Services.AddScoped<IStaffGroupRepository, StaffGroupRepository>();
-builder.Services.AddScoped<StaffGroupRepository>();
+builder.Services.AddScoped<StaffGroupService>();
 
 var app = builder.Build();
 app.UseCors("CorsApi");
