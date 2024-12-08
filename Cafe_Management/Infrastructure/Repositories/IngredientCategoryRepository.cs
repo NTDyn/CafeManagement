@@ -34,13 +34,12 @@ namespace Cafe_Management.Infrastructure.Repositories
             ingredientCategory.CreatedDate = DateTime.Now;
             ingredientCategory.ModifiedDate = DateTime.Now;
 
-            // Tìm giá trị IngredientCategoryID lớn nhất hiện tại
-            var maxId = await _context.IngredientCategory.MaxAsync(p => (int?)p.Ingredient_Category_ID) ?? 0;
-
-            // Tự động tăng ID cho sản phẩm mới
-            ingredientCategory.Ingredient_Category_ID = maxId + 1;
-            await _context.IngredientCategory.AddAsync(ingredientCategory);
-            await _context.SaveChangesAsync();
+            if(ingredientCategory.Ingredient_Category_Name != null)
+            {
+                await _context.IngredientCategory.AddAsync(ingredientCategory);
+                await _context.SaveChangesAsync();
+            }
+           
         }
         public async Task UpdateIngredientCategory(IngredientCategory ingredientCategory)
         {
