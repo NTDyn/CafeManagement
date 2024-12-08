@@ -5,10 +5,10 @@ namespace Cafe_Management.Core.Interfaces
 {
     public interface ISupplierRepository
     {
-        APIResult GetAllSuppliers(int? supplierID);
-
-        APIResult AddSupplier(Supplier supplier);
-
-        APIResult UpdateSupplier(Supplier supplier);
+        Task<Supplier> GetSupplierById(int id);
+        Task<IEnumerable<Supplier>> GetAllSupplier();
+        Task AddSupplier(Supplier supplier);
+        Task UpdateSupplier(Supplier supplier);
+        Task<bool> checkExistNameForUpdate(Supplier supplier);
     }
 }

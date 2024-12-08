@@ -1,4 +1,5 @@
 ﻿using Cafe_Management.Application.Services;
+using Cafe_Management.Code;
 using Cafe_Management.Core.Entities;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -18,22 +19,86 @@ namespace Cafe_Management.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllSuppliers(int? supplierId) {
-            var result = _supplierService.GetAllSuppliers(supplierId);
-            return Ok(result);
+        public async Task<IActionResult> GetAllSuppliers() {
+            var suppliers  = await _supplierService.GetAllSuppliers();
+            APIResult result = new APIResult();
+            if (suppliers != null && suppliers.Any())
+            {
+               result = new APIResult
+                {
+                    Data = suppliers,
+                    Message = "Successfully",
+                    Status = 200
+                };
+                return Ok(result);
+            }
+            else
+            {
+                result = new APIResult
+                {
+
+                    Data = null,
+                    Message = "Successfully",
+                    Status = 200
+                };
+                return Ok(result);
+            }
+         
         }
+       
 
         [HttpPost]
-        public IActionResult AddSupplier(Supplier supplier)
+        public async Task<IActionResult> AddSupplier ([FromBody] Supplier supplier)
         {
-            var result = _supplierService.AddSupplier(supplier);
-            return Ok(result);
+            try
+            {
+                await _supplierService.AddSupplier(supplier);
+                APIResult result = new APIResult
+                {
+                    Data = supplier, // Set the added product as data
+                    Message = "Successfully added the supplier",
+                    Status = 200
+                };
+                return Ok(result);
+
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.InnerException?.Message,
+                    Status = 400
+                });
+            }
         }
 
+
+     
         [HttpPut]
-        public IActionResult UpdateSupplier(Supplier supplier) { 
-            var result = _supplierService.UpdateSupplier(supplier);
-            return Ok(result);
+        public async Task<IActionResult> UpdateSupplier([FromBody]Supplier supplier)
+        {
+            try
+            {
+           
+                    await _supplierService.UpdateSupplier(supplier);
+                    APIResult result = new APIResult
+
+                    {
+                        Data = supplier,
+                        Message = "Successfully",
+                        Status = 200
+                    };
+                    return Ok(result);
+                
+            }
+            catch(Exception e)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = e.Message,
+                    Status = 400
+                });
+            }
         }
     }
 }

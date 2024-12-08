@@ -13,19 +13,29 @@ namespace Cafe_Management.Application.Services
             _supplierRepository = supplierRepository;
         }
 
-        public APIResult GetAllSuppliers(int? supplierId)
+        public async Task<IEnumerable<Supplier>> GetAllSuppliers()
         {
-            return _supplierRepository.GetAllSuppliers(supplierId);
+            return await _supplierRepository.GetAllSupplier();
         }
 
-        public APIResult AddSupplier(Supplier supplier)
+        public async Task AddSupplier(Supplier? supplier)
         {
-            return _supplierRepository.AddSupplier(supplier);
+          
+             await _supplierRepository.AddSupplier(supplier);
         }
 
-        public APIResult UpdateSupplier(Supplier supplier)
+        public async  Task UpdateSupplier(Supplier supplier)
         {
-            return _supplierRepository.UpdateSupplier(supplier);    
+           await _supplierRepository .UpdateSupplier(supplier);    
+        }
+        public async Task<Supplier?>getOneSupplier(int id)
+        {
+            return await _supplierRepository.GetSupplierById(id);
+
+        }
+        public async Task<bool>checkNameSupplier(Supplier supplier)
+        {
+            return await _supplierRepository.checkExistNameForUpdate(supplier);
         }
     }
 }
