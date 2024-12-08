@@ -92,6 +92,10 @@ builder.Services.AddScoped<SpoiledIngredientService>();
 builder.Services.AddScoped<IBatchRecipeRepository, BatchRecipeRepository>();
 builder.Services.AddScoped<BatchRecipeService>();
 
+//Request
+builder.Services.AddScoped<IRequestImportRepository, RequestImportRepository>();
+builder.Services.AddScoped<RequestImportService>();
+
 var app = builder.Build();
 app.UseCors("CorsApi");
 // Configure the HTTP request pipeline

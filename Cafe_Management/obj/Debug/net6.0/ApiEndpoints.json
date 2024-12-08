@@ -84,6 +84,37 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafe_Management.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Username",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Cafe_Management.Code.APIResult",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.MenuController",
     "Method": "GetMenus",
     "RelativePath": "api/Menu",
@@ -263,6 +294,38 @@
       {
         "Name": "productRecipe",
         "Type": "Cafe_Management.Core.Entities.ProductRecipe",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "CreateSupplierLinkAndDetails",
+    "RelativePath": "api/RequestImport",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createSupplierDTO",
+        "Type": "Cafe_Management.Infrastructure.Model.RequestImport",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "GetListRequest",
+    "RelativePath": "api/RequestImport/{status}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
