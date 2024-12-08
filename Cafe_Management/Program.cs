@@ -80,6 +80,10 @@ builder.Services.AddScoped<StaffGroupLinkPermissionRepository>();
 builder.Services.AddScoped<IStaffGroupRepository, StaffGroupRepository>();
 builder.Services.AddScoped<StaffGroupRepository>();
 
+//Request
+builder.Services.AddScoped<IRequestImportRepository, RequestImportRepository>();
+builder.Services.AddScoped<RequestImportService>();
+
 var app = builder.Build();
 app.UseCors("CorsApi");
 // Configure the HTTP request pipeline
