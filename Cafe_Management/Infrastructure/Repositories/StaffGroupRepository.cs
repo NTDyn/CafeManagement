@@ -1,4 +1,5 @@
-﻿using Cafe_Management.Code;
+﻿using Cafe_Management.Application.Services;
+using Cafe_Management.Code;
 using Cafe_Management.Core.Entities;
 using Cafe_Management.Core.Interfaces;
 using Cafe_Management.Infrastructure.Data;
@@ -11,8 +12,8 @@ namespace Cafe_Management.Infrastructure.Repositories
     public class StaffGroupRepository:IStaffGroupRepository
     {
         private readonly AppDbContext _context;
-        private readonly StaffGroupLinkPermissionRepository _permission;
-        public StaffGroupRepository(AppDbContext context, StaffGroupLinkPermissionRepository permission)
+        private readonly StaffGroupPermissionLinkService _permission;
+        public StaffGroupRepository(AppDbContext context, StaffGroupPermissionLinkService permission)
         {
             _context = context;
             _permission = permission;
@@ -33,8 +34,10 @@ namespace Cafe_Management.Infrastructure.Repositories
             {
                 _Filter = Function.AndAlso(_Filter, x => x.IsActive == IsActive);
             }
-            var JoinData = await (from sg in _context.StaffGroup.Where(_Filter)
-                                  join sgp in _context.StaffGroupLinkPermission.Where(x => x.IsActive == true)
+            List<StaffGroup> staffGroups = await _context.StaffGroup.Where(_Filter).ToListAsync();
+            List<StaffGroupLinkPermission> staffGroupLinkPermissions = await _context.StaffGroupLinkPermission.Where(x=>x.IsActive == true).ToListAsync();
+            var JoinData = (from sg in staffGroups
+                                  join sgp in staffGroupLinkPermissions
                                   on sg.StaffGroup_ID equals sgp.StaffGroup
                                   into groupPermissions
                                   select new StaffGroup
@@ -45,7 +48,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                                       CreatedDate = sg.CreatedDate,
                                       ModifiedDate = sg.ModifiedDate,
                                       Permissions = groupPermissions.ToList()
-                                  }).ToListAsync();
+                                  }).ToList();
 
             return JoinData;
         }

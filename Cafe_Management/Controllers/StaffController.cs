@@ -1,10 +1,15 @@
 ﻿using Cafe_Management.Application.Services;
 using Cafe_Management.Code;
 using Cafe_Management.Core.Entities;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafe_Management.Controllers
 {
+
+    [EnableCors("CorsApi")]
+    [ApiController]
+    [Route("api/[controller]")]
     public class StaffController : ControllerBase
     {
         private readonly StaffService _staffService;

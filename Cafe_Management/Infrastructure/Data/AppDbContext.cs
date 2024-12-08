@@ -88,6 +88,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<MenuDetail>().HasKey(d => d.Setup_ID);
             modelBuilder.Entity<MenuDetail>().ToTable("MenuDetail");
+            modelBuilder.Entity<MenuDetail>().Ignore(e => e.Product);
 
             modelBuilder.Entity<Permission>().HasKey(p => p.Permission_ID);
             modelBuilder.Entity<Permission>().ToTable("Permissions");
@@ -113,9 +114,11 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<StaffGroup>().HasKey(g => g.StaffGroup_ID);
             modelBuilder.Entity<StaffGroup>().ToTable("StaffGroups");
+            modelBuilder.Entity<StaffGroup>().Ignore(s => s.Permissions);
 
             modelBuilder.Entity<StaffGroupLinkPermission>().HasKey(g => g.Link_ID);
             modelBuilder.Entity<StaffGroupLinkPermission>().ToTable("StaffGroupLinkPermissions");
+            modelBuilder.Entity<StaffGroupLinkPermission>().Ignore(e => e.StaffGroup);
 
             modelBuilder.Entity<StoreIngredient>().HasKey(si => si.Store_ID);
             modelBuilder.Entity<StoreIngredient>().ToTable("StoreIngredients");
