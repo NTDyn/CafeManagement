@@ -13,5 +13,7 @@ namespace Cafe_Management.Core.Interfaces
                                                 string Staff_Phone = null);
         Task Create(Staff staff);
         Task Update(Staff staff);
+        Task<Staff> getStaffByUserName(string userName);
+        Task<Staff> getStaffById(int id);
     }
 }

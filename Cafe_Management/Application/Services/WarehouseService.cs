@@ -28,5 +28,14 @@ namespace Cafe_Management.Application.Services
         {
             await _warehouseRepository.UpdateWarehouse(warehouse);
         }
+        public async Task<IEnumerable<Warehouse>> GetWareHouseActive()
+        {
+           return  await _warehouseRepository.GetWareHouseActive();
+        }
+
+        public async Task<Warehouse>getWareHouseById(int id)
+        {
+            return await _warehouseRepository.getWareHouseById(id);
+        }
     }
 }

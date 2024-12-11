@@ -1,5 +1,37 @@
 [
   {
+    "ContainingType": "Cafe_Management.Controllers.BatchRecipeController",
+    "Method": "Get",
+    "RelativePath": "api/BatchRecipe",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BatchRecipe_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.BatchRecipeController",
+    "Method": "Create",
+    "RelativePath": "api/BatchRecipe",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "BatchRecipe",
+        "Type": "Cafe_Management.Core.Entities.BatchRecipe",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.IngredientController",
     "Method": "GetAllIngredients",
     "RelativePath": "api/Ingredient",
@@ -39,6 +71,32 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.IngredientController",
+    "Method": "getIngredientById",
+    "RelativePath": "api/Ingredient/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.IngredientController",
+    "Method": "GetIngredientActive",
+    "RelativePath": "api/Ingredient/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -162,6 +220,54 @@
       {
         "Name": "menu",
         "Type": "Cafe_Management.Core.Entities.Menu",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.MenuDetailController",
+    "Method": "Get",
+    "RelativePath": "api/MenuDetail",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "menuId",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.MenuDetailController",
+    "Method": "Create",
+    "RelativePath": "api/MenuDetail",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MenuDetails",
+        "Type": "System.Collections.Generic.List\u00601[[Cafe_Management.Core.Entities.MenuDetail, Cafe_Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.MenuDetailController",
+    "Method": "Update",
+    "RelativePath": "api/MenuDetail",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MenuDetails",
+        "Type": "System.Collections.Generic.List\u00601[[Cafe_Management.Core.Entities.MenuDetail, Cafe_Management, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -300,6 +406,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "Get",
+    "RelativePath": "api/Receipt",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Receipt_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "Create",
+    "RelativePath": "api/Receipt",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Receipt",
+        "Type": "Cafe_Management.Core.Entities.Receipt",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.RequestImportController",
     "Method": "CreateSupplierLinkAndDetails",
     "RelativePath": "api/RequestImport",
@@ -317,6 +455,22 @@
   },
   {
     "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "ChangeStatus",
+    "RelativePath": "api/RequestImport",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "Cafe_Management.Infrastructure.Model.ChangeStatusRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
     "Method": "GetListRequest",
     "RelativePath": "api/RequestImport/{status}",
     "HttpMethod": "GET",
@@ -326,6 +480,260 @@
       {
         "Name": "status",
         "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "getListImportDetail",
+    "RelativePath": "api/RequestImport/detaillink",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "GetListDetai",
+    "RelativePath": "api/RequestImport/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "getRequest",
+    "RelativePath": "api/RequestImport/id_link",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.RequestImportController",
+    "Method": "UpdateDetailSupplierIngredient",
+    "RelativePath": "api/RequestImport/updatedetail",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "requestDto",
+        "Type": "Cafe_Management.Infrastructure.Model.UpdateImportRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.SpoiledIngredientController",
+    "Method": "Get",
+    "RelativePath": "api/SpoiledIngredient",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Spoiled_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.SpoiledIngredientController",
+    "Method": "Create",
+    "RelativePath": "api/SpoiledIngredient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "SpoiledIngredient",
+        "Type": "Cafe_Management.Core.Entities.SpoiledIngredient",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffController",
+    "Method": "Get",
+    "RelativePath": "api/Staff",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Staff_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsActive",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "StaffGroup_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Username",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Password",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Staff_Phone",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffController",
+    "Method": "AddMenu",
+    "RelativePath": "api/Staff",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "staff",
+        "Type": "Cafe_Management.Core.Entities.Staff",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffController",
+    "Method": "Update",
+    "RelativePath": "api/Staff",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "staff",
+        "Type": "Cafe_Management.Core.Entities.Staff",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffController",
+    "Method": "getStaffById",
+    "RelativePath": "api/Staff/staff_id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffController",
+    "Method": "GetStaffByUserName",
+    "RelativePath": "api/Staff/username",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffGroupController",
+    "Method": "Get",
+    "RelativePath": "api/StaffGroup",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StaffGroup_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsActive",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffGroupController",
+    "Method": "Create",
+    "RelativePath": "api/StaffGroup",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "staffGroup",
+        "Type": "Cafe_Management.Core.Entities.StaffGroup",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.StaffGroupController",
+    "Method": "Update",
+    "RelativePath": "api/StaffGroup",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "staffGroup",
+        "Type": "Cafe_Management.Core.Entities.StaffGroup",
         "IsRequired": true
       }
     ],
@@ -369,6 +777,32 @@
         "Name": "supplier",
         "Type": "Cafe_Management.Core.Entities.Supplier",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.SupplierController",
+    "Method": "getSupplierActive",
+    "RelativePath": "api/Supplier/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.SupplierController",
+    "Method": "getSupplierById",
+    "RelativePath": "api/Supplier/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -422,6 +856,32 @@
         "Name": "warehouse",
         "Type": "Cafe_Management.Core.Entities.Warehouse",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.WarehouseController",
+    "Method": "getWareHouseActive",
+    "RelativePath": "api/Warehouse/active",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.WarehouseController",
+    "Method": "getWareHouseById",
+    "RelativePath": "api/Warehouse/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

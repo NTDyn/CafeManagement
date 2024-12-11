@@ -49,6 +49,7 @@ namespace Cafe_Management.Controllers
                 var Data = new
                 {
                     Staff_FullName = staff.Staff_FullName,
+                    Staff_UserName=staff.Username,
                     StaffGroup_Name = staffGroup != null ? staffGroup.StaffGroup_Name : null,
                     permissions = permissions.Count() > 0 ? permissions.Select( x => new {
                         Permission_ID = x.Permission_ID

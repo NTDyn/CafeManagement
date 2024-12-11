@@ -66,5 +66,15 @@ namespace Cafe_Management.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<IEnumerable<Warehouse>> GetWareHouseActive()
+        {
+           return await _context.Warehouse.Where(w=>w.IsActive==true).ToListAsync();
+        }
+
+        public async Task<Warehouse> getWareHouseById(int id)
+        {
+            return await _context.Warehouse.FindAsync(id);
+        }
     }
 }
