@@ -47,7 +47,7 @@ namespace Cafe_Management.Controllers
                 await _ingredientService.AddIngredient(ingredient);
                 APIResult result = new APIResult
                 {
-                    Data = ingredient, // Set the added product as data
+                    Data = ingredient, 
                     Message = "Successfully added the ingredient",
                     Status = 200
                 };
@@ -72,9 +72,10 @@ namespace Cafe_Management.Controllers
             try
             {
                 await _ingredientService.UpdateIngredient(ingredient);
+                var data = await _ingredientService.GetIngredientById((int)ingredient.Ingredient_ID);
                 APIResult result = new APIResult
                 {
-                    Data = ingredient,
+                    Data = data,
                     Message = "Successfully ",
                     Status = 200
                 };

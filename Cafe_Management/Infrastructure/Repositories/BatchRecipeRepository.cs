@@ -83,11 +83,11 @@ namespace Cafe_Management.Infrastructure.Repositories
                     BatchRecipeDetail batchRecipeDetail = new BatchRecipeDetail();
 
                     Ingredient? ingredientRaw = await _context.Ingredient.SingleOrDefaultAsync(x => x.Ingredient_ID == recipe.Ingredient_Raw);
-                    double Quantity = TotalQuantity * recipe.Quantity;
+                    double Quantity = TotalQuantity * (double)recipe.Quantity;
                     batchRecipeDetail.Unit = 0;
                     batchRecipeDetail.BatchRecipe_ID = ID;
                     batchRecipeDetail.Quality = Quantity;
-                    batchRecipeDetail.Ingredient_ID = recipe.Ingredient_Raw;
+                    batchRecipeDetail.Ingredient_ID = (int) recipe.Ingredient_Raw;
                     batchRecipeDetail.IsActive = true;
                     batchRecipeDetail.CreatedDate = DateTime.Now;
                     batchRecipeDetail.ModifiedDate = DateTime.Now;

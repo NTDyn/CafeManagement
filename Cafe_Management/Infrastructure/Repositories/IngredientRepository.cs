@@ -57,11 +57,6 @@ namespace Cafe_Management.Infrastructure.Repositories
             ingredient.CreatedDate = DateTime.Now;
             ingredient.ModifiedDate = DateTime.Now;
 
-            // Tìm giá trị ProductID lớn nhất hiện tại
-            var maxId = await _context.Ingredient.MaxAsync(p => (int?)p.Ingredient_ID) ?? 0;
-
-            // Tự động tăng ID cho sản phẩm mới
-            ingredient.Ingredient_ID = maxId + 1;
             await _context.Ingredient.AddAsync(ingredient);
             await _context.SaveChangesAsync();
         }
@@ -73,17 +68,40 @@ namespace Cafe_Management.Infrastructure.Repositories
                 if (ingredient.IsActive != null)
                 {
                     existingIngredient.IsActive = ingredient.IsActive;
-                    await _context.SaveChangesAsync(); // Lưu thay đổi vào database
-                    return;
                 }
-                if (ingredient.IsActive == null)
+                if (ingredient.Ingredient_Type != null)
+                {
+                    existingIngredient.Ingredient_Type = ingredient.Ingredient_Type;
+                    
+                }
+                if (ingredient.Ingredient_Name != null)
                 {
                     existingIngredient.Ingredient_Name = ingredient.Ingredient_Name;
+
+                }
+                if (ingredient.Ingredient_Category != null)
+                {
                     existingIngredient.Ingredient_Category = ingredient.Ingredient_Category;
-                    await _context.SaveChangesAsync(); // Lưu thay đổi vào database
+
+                }
+                if (ingredient.Unit_Min != null)
+                {
+                    existingIngredient.Unit_Min = ingredient.Unit_Min;
+
+                }
+                if (ingredient.Unit_Max != null)
+                {
+                    existingIngredient.Unit_Max = ingredient.Unit_Max;
+
+                }
+                if (ingredient.Unit_Transfer != null)
+                {
+                    existingIngredient.Unit_Transfer = ingredient.Unit_Transfer;
+
                 }
 
             }
+            await _context.SaveChangesAsync(); // Lưu thay đổi vào database
         }
 
         public async Task<IEnumerable<Ingredient>> GetIngredientActive()

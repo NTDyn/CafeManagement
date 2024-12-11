@@ -45,43 +45,56 @@ namespace Cafe_Management.Controllers
         [HttpPost]
         public async Task<IActionResult> AddMenu([FromBody] Menu menu)
         {
+            APIResult result = new APIResult();
             try
             {
-                if(menu.Menu_Name == null)
+                if (menu.Menu_Name == null)
                 {
-                    return BadRequest("Menu name can not be empty");
+                    result.Status = 0;
+                    result.Message = "Menu Name can not be empty";
+                    return BadRequest(result);
                 }
+                
 
                 await _menuService.AddMenu(menu);
-                return CreatedAtAction(nameof(GetMenus), new { Menu_ID = menu.Menu_ID }, menu);
+                result.Data = menu;
+                result.Status = 200;
+                result.Message = "Successfully";
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                result.Status = 0;
+                result.Message = ex.Message;
             }
+
+            return CreatedAtAction(nameof(AddMenu), new { id = menu.Menu_ID }, result);
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateMenu([FromBody] Menu menu)
         {
+            APIResult result = new APIResult();
             try
             {
                 if (menu.Menu_ID == null)
                 {
-                    return BadRequest("Menu id can not be empty");
+                    result.Status = 0;
+                    result.Message = "Menu_ID cannot be empty";
+                    return BadRequest(result);
                 }
                 await _menuService.UpdateMenu(menu);
-                var result = await _menuService.GetMenus(menu.Menu_ID, null);
-                if(result.Count() == 0)
-                {
-                    return BadRequest("Menu id does not exist");
-                }
-                return Ok(result);
             }
             catch (Exception ex)
             {
-                return BadRequest(new { message = ex.Message });
+                result.Status = 0;
+                result.Message = ex.Message;
+                return BadRequest(result);
             }
+            var cus = await _menuService.GetMenus(menu.Menu_ID, null);
+            result.Data = cus;
+            result.Status = 200;
+            result.Message = "Successfully";
+            return Ok(result);
         }
     }
 }
