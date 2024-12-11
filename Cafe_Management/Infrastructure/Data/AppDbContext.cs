@@ -46,11 +46,11 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<ProductRecipe>().HasKey(pr => pr.Recipe_ID);
             modelBuilder.Entity<ProductRecipe>().ToTable("ProductRecipe");
-            
+
 
             modelBuilder.Entity<ProductCategory>().HasKey(pc => pc.Category_ID);
             modelBuilder.Entity<ProductCategory>().ToTable("ProductCategory");
-           
+
 
             modelBuilder.Entity<BatchRecipe>().HasKey(b => b.BatchRecipe_ID);
             modelBuilder.Entity<BatchRecipe>().ToTable("BatchRecipe");
@@ -74,6 +74,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<Ingredient>().HasKey(d => d.Ingredient_ID);
             modelBuilder.Entity<Ingredient>().ToTable("Ingredients");
+            modelBuilder.Entity<Ingredient>().Ignore(x => x.RecipeRaws);
 
             modelBuilder.Entity<IngredientCategory>().HasKey(d => d.Ingredient_Category_ID);
             modelBuilder.Entity<IngredientCategory>().ToTable("Ingredient_Categories");
@@ -107,7 +108,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<SpoiledIngredient>().HasKey(p => p.Spoiled_ID);
             modelBuilder.Entity<SpoiledIngredient>().ToTable("SpoiledIngredients");
-            modelBuilder.Entity<SpoiledIngredient>().Ignore(e=>e.Details);
+            modelBuilder.Entity<SpoiledIngredient>().Ignore(e => e.Details);
 
             modelBuilder.Entity<SpoiledIngredientDetail>().HasKey(p => p.SpoildDetail_ID);
             modelBuilder.Entity<SpoiledIngredientDetail>().ToTable("SpoiledIngredientDetails");
@@ -121,7 +122,7 @@ namespace Cafe_Management.Infrastructure.Data
 
             modelBuilder.Entity<StaffGroupLinkPermission>().HasKey(g => g.Link_ID);
             modelBuilder.Entity<StaffGroupLinkPermission>().ToTable("StaffGroupLinkPermissions");
-           
+
 
             modelBuilder.Entity<StoreIngredient>().HasKey(si => si.Store_ID);
             modelBuilder.Entity<StoreIngredient>().ToTable("StoreIngredients");

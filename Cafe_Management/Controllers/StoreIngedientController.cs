@@ -1,9 +1,13 @@
 ﻿using Cafe_Management.Application.Services;
 using Cafe_Management.Code;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cafe_Management.Controllers
 {
+    [EnableCors("CorsApi")]
+    [ApiController]
+    [Route("api/[controller]")]
     public class StoreIngedientController:ControllerBase
     {
         private readonly StoreIngredientService _storeIngredientService;

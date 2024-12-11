@@ -9,7 +9,7 @@ namespace Cafe_Management.Controllers
     [EnableCors("CorsApi")]
     [ApiController]
     [Route("api/[controller]")]
-    public class BatchRecipeController:ControllerBase
+    public class BatchRecipeController : ControllerBase
     {
         private readonly BatchRecipeService _batchRecipeService;
         private readonly IngredientService _ingredientService;
@@ -54,28 +54,28 @@ namespace Cafe_Management.Controllers
                     result.Message = "Staff_ID cannot be empty";
                     return BadRequest();
                 }
-                if (BatchRecipe.Details == null || BatchRecipe.Details.Count == 0)
+                if (BatchRecipe.IngredientResult_ID == null)
                 {
                     result.Status = 0;
-                    result.Message = "Details cannot be empty";
+                    result.Message = "IngredientResult_ID cannot be empty";
                     return BadRequest();
                 }
-                else
+                if (BatchRecipe.Quality == null)
                 {
-                    foreach (var item in BatchRecipe.Details)
-                    {
-                        var Data = await _ingredientService.GetIngredientById(item.Ingredient_ID);
-                        if (Data == null)
-                        {
-                            result.Status = 0;
-                            result.Message = $"Ingredient ID = {item.Ingredient_ID} does not exits";
-                            return BadRequest();
-                        }
-                    }
+                    result.Status = 0;
+                    result.Message = "Quality cannot be empty";
+                    return BadRequest();
+                }
+                if (BatchRecipe.Unit == null)
+                {
+                    result.Status = 0;
+                    result.Message = "Quality cannot be empty";
+                    return BadRequest();
                 }
                 await _batchRecipeService.Create(BatchRecipe);
                 result.Status = 200;
                 result.Message = "Successfully";
+                result.Data = await _batchRecipeService.Get(BatchRecipe.BatchRecipe_ID);
             }
             catch (Exception ex)
             {
@@ -83,7 +83,7 @@ namespace Cafe_Management.Controllers
                 result.Message = ex.Message;
             }
 
-            return CreatedAtAction(nameof(Get), new { id = BatchRecipe.BatchRecipe_ID }, result);
+            return Ok(result);
         }
     }
 }

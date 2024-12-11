@@ -14,9 +14,9 @@ namespace Cafe_Management.Application.Services
             _productCategoryRepository = productCategoryRepository;
         }
 
-        public async Task<IEnumerable<ProductCategory>> GetAllProductCategories()
+        public async Task<IEnumerable<ProductCategory>> GetAllProductCategories(Nullable<int> cateID)
         {
-            return await _productCategoryRepository.GetAllProductCategories();
+            return await _productCategoryRepository.GetAllProductCategories(cateID);
         }
 
         public async Task AddProductCategory(ProductCategory category)

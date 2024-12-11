@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Data;
 using System.Data.Odbc;
+using System.Linq.Expressions;
 
 namespace Cafe_Management.Infrastructure.Repositories
 {
@@ -19,9 +20,20 @@ namespace Cafe_Management.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<IEnumerable<ProductCategory>> GetAllProductCategories()
+        public async Task<IEnumerable<ProductCategory>> GetAllProductCategories(Nullable<int> CategoryID)
         {
-            return await _context.ProductCategory.ToListAsync();
+            List<ProductCategory> CategoryList = null;
+            Expression<Func<ProductCategory, bool>> _Filter = r => true;
+
+            if (CategoryID != null)
+            {
+                _Filter = Function.AndAlso(_Filter, x => x.Category_ID == CategoryID);
+            }
+
+        
+            CategoryList = await _context.ProductCategory.Where(_Filter).ToListAsync();
+
+            return CategoryList;
         }
 
 
@@ -29,6 +41,7 @@ namespace Cafe_Management.Infrastructure.Repositories
         {
             category.CreatedDate = DateTime.Now;
             category.ModifiedDate = DateTime.Now;
+            category.IsActive = true;
 
             if(category.Category_Name != null )
             {
@@ -47,8 +60,15 @@ namespace Cafe_Management.Infrastructure.Repositories
             var existingProductCategory = await _context.ProductCategory.FindAsync(category.Category_ID);
             if (existingProductCategory != null)
             {
+                if(category.Category_Name != null)
+                {
                     existingProductCategory.Category_Name = category.Category_Name;
+                }
+                if(category.IsActive != null)
+                {
                     existingProductCategory.IsActive = category.IsActive;
+                }
+                   
                     await _context.SaveChangesAsync(); // Lưu thay đổi vào database
 
             }

@@ -1,6 +1,4 @@
 
-
-
 using Cafe_Management.Application.Services;
 using Cafe_Management.Core.Interfaces;
 using Cafe_Management.Infrastructure.Data;
@@ -8,16 +6,6 @@ using Cafe_Management.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowAll", policy =>
-//    {
-//        policy.AllowAnyOrigin()
-//              .AllowAnyMethod()
-//              .AllowAnyHeader();
-//    });
-//});
 
 builder.Services.AddCors(options =>
 {

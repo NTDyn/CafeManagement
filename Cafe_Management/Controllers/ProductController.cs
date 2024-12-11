@@ -28,12 +28,12 @@ namespace Cafe_Management.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAllProducts()
+        public async Task<IActionResult> GetAllProducts(Nullable<bool> isActive)
         {
             APIResult result = new APIResult();
             try
             {
-                var products = await _productService.GetAllProductsAsync();
+                var products = await _productService.GetAllProductsAsync(isActive);
 
 
                 if (products != null)
@@ -59,7 +59,7 @@ namespace Cafe_Management.Controllers
 
             try
             {
-                var productCategorys = await _productCategoryService.GetAllProductCategories();
+                var productCategorys = await _productCategoryService.GetAllProductCategories(null);
                 var ingredients = await _ingredientService.GetAllIngredients();
                 if (product.Product_Category == null)
                 {

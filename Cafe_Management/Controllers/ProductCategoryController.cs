@@ -20,9 +20,9 @@ namespace Cafe_Management.Controllers
 
         [HttpGet]
 
-        public async Task<IActionResult> GetAllProductCategories()
+        public async Task<IActionResult> GetAllProductCategories(Nullable<int> cateID)
         {
-            var category = await _productCategoryService.GetAllProductCategories();
+            var category = await _productCategoryService.GetAllProductCategories(cateID);
             if (category != null && category.Any()) 
             {
                 APIResult result = new APIResult
@@ -46,7 +46,13 @@ namespace Cafe_Management.Controllers
             {
 
                 await _productCategoryService.AddProductCategory(category);
-                return CreatedAtAction(nameof(GetAllProductCategories), new { id = category.Category_ID }, category);
+                APIResult result = new APIResult
+                {
+                    Data = category,
+                    Message = "Successfully",
+                    Status = 200
+                };
+                return CreatedAtAction(nameof(GetAllProductCategories), new { id = category.Category_ID }, result);
             }
             catch (Exception ex)
             {
@@ -60,7 +66,14 @@ namespace Cafe_Management.Controllers
             try
             {
                 await _productCategoryService.UpdateProductCategory(category);
-                return NoContent();
+                var data = await _productCategoryService.GetAllProductCategories(category.Category_ID);
+                APIResult result = new APIResult
+                {
+                    Data = data,
+                    Message = "Successfully",
+                    Status = 200
+                };
+                return Ok(result);
             }
             catch (Exception ex)
             {

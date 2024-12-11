@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cafe_Management.Infrastructure.Repositories
 {
-    public class IngredientRepository: IIngredientRepository
+    public class IngredientRepository : IIngredientRepository
     {
         private readonly AppDbContext _context;
 
@@ -20,9 +20,36 @@ namespace Cafe_Management.Infrastructure.Repositories
             return await _context.Ingredient.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Ingredient>> GetAllIngredients()
+        public async Task<IEnumerable<Ingredient>> GetAllIngredients(Nullable<int> Type = null)
         {
-            return await _context.Ingredient.ToListAsync();
+            List<Ingredient> ingredients = null;
+            if (Type != null)
+            {
+                ingredients = await _context.Ingredient.Where(x => x.Ingredient_Type == Type).ToListAsync();
+            }
+            ingredients = await _context.Ingredient.ToListAsync();
+            List<RecipeRaw> RecipeRaws = await _context.RecipeRaw.ToListAsync();
+
+            var JoinData = (from d in ingredients
+                            join r in RecipeRaws on d.Ingredient_ID equals r.Ingredient_Result
+                            into groupjoin
+                            select new Ingredient
+                            {
+                                Ingredient_ID = d.Ingredient_ID,
+                                Ingredient_Name = d.Ingredient_Name,
+                                Ingredient_Category = d.Ingredient_Category,
+                                Ingredient_Type = d.Ingredient_Type,
+                                Unit_Transfer = d.Unit_Transfer,
+                                Unit_Min = d.Unit_Min,
+                                Unit_Max = d.Unit_Max,
+                                TransferPerMin = d.TransferPerMin,
+                                MaxPerTransfer = d.MaxPerTransfer,
+                                IsActive = d.IsActive,
+                                CreatedDate = d.CreatedDate,
+                                ModifiedDate = d.ModifiedDate,
+                                RecipeRaws = groupjoin.ToList()
+                            }).ToList();
+            return JoinData;
         }
 
         public async Task AddIngredient(Ingredient ingredient)
@@ -30,6 +57,11 @@ namespace Cafe_Management.Infrastructure.Repositories
             ingredient.CreatedDate = DateTime.Now;
             ingredient.ModifiedDate = DateTime.Now;
 
+            // Tìm giá trị ProductID lớn nhất hiện tại
+            var maxId = await _context.Ingredient.MaxAsync(p => (int?)p.Ingredient_ID) ?? 0;
+
+            // Tự động tăng ID cho sản phẩm mới
+            ingredient.Ingredient_ID = maxId + 1;
             await _context.Ingredient.AddAsync(ingredient);
             await _context.SaveChangesAsync();
         }

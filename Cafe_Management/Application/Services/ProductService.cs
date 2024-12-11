@@ -14,9 +14,9 @@ namespace Cafe_Management.Application.Services
             _productRepository = productRepository;
         }
 
-        public async Task<IEnumerable<Product>> GetAllProductsAsync()
+        public async Task<IEnumerable<Product>> GetAllProductsAsync(Nullable<bool> isActive)
         {
-            return await _productRepository.GetAllAsync();
+            return await _productRepository.GetAllAsync(isActive);
         }
 
         public async Task<Product?> GetProductByIdAsync(int id)

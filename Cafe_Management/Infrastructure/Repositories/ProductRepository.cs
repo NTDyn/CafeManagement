@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Cafe_Management.Infrastructure.Data;
 using Cafe_Management.Application.Services;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Cafe_Management.Infrastructure.Repositories
 {
@@ -49,9 +50,20 @@ namespace Cafe_Management.Infrastructure.Repositories
         }).FirstOrDefaultAsync();
         }
 
-        public async Task<IEnumerable<Product>> GetAllAsync()
+        public async Task<IEnumerable<Product>> GetAllAsync(Nullable<bool> isActive)
         {
-            return await _context.Products
+
+            List<Product> productList = null;
+            Expression<Func<Product, bool>> _Filter = r => true;
+
+            if (isActive != null)
+            {
+                _Filter = Function.AndAlso(_Filter, x => x.IsActive == isActive);
+            }
+
+            productList =  await _context.Products
+                .Where(_Filter)
+
         .Select(p => new Product
         {
 
@@ -69,6 +81,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 .Where(r => r.Product_ID == p.Product_ID)
                 .ToList()
         }).ToListAsync();
+            return productList;
         }
 
         public async Task AddAsync(Product product)

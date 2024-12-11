@@ -39,7 +39,7 @@ namespace Cafe_Management.Infrastructure.Repositories
         {
             StoreIngredient.CreatedDate = DateTime.Now;
             StoreIngredient.ModifiedDate = DateTime.Now;
-
+            StoreIngredient.IsActive = true;
             await _context.StoreIngredient.AddAsync(StoreIngredient);
             await _context.SaveChangesAsync();
         }

@@ -14,9 +14,9 @@ namespace Cafe_Management.Application.Services
             _ingredientRepository = ingredientRepository;
         }
 
-        public async Task<IEnumerable<Ingredient>> GetAllIngredients()
+        public async Task<IEnumerable<Ingredient>> GetAllIngredients(Nullable<int> Type = null)
         {
-            return await _ingredientRepository.GetAllIngredients();
+            return await _ingredientRepository.GetAllIngredients(Type);
         }
 
         public async Task<Ingredient?> GetIngredientById(int id)

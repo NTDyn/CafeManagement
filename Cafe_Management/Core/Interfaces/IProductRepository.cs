@@ -9,7 +9,7 @@ namespace Cafe_Management.Core.Interfaces
     public interface IProductRepository
     {
         Task<Product?> GetProductByIdAsync(int id);
-        Task<IEnumerable<Product>> GetAllAsync();
+        Task<IEnumerable<Product>> GetAllAsync(Nullable<bool> isActive);
         Task AddAsync(Product product);
         Task UpdateAsync(Product product);
     }

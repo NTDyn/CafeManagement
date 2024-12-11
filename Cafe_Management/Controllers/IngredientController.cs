@@ -9,7 +9,7 @@ namespace Cafe_Management.Controllers
     [EnableCors("CorsApi")]
     [ApiController]
     [Route("api/[controller]")]
-    public class IngredientController :ControllerBase
+    public class IngredientController : ControllerBase
     {
         private readonly IngredientService _ingredientService;
 
@@ -19,9 +19,9 @@ namespace Cafe_Management.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllIngredients()
+        public async Task<IActionResult> GetAllIngredients(Nullable<int> Type = null)
         {
-            var ingredients = await _ingredientService.GetAllIngredients();
+            var ingredients = await _ingredientService.GetAllIngredients(Type);
             if (ingredients != null && ingredients.Any()) // Check if products is not null and contains items
             {
                 APIResult result = new APIResult
@@ -74,7 +74,7 @@ namespace Cafe_Management.Controllers
                 await _ingredientService.UpdateIngredient(ingredient);
                 APIResult result = new APIResult
                 {
-                    Data = ingredient, 
+                    Data = ingredient,
                     Message = "Successfully ",
                     Status = 200
                 };
