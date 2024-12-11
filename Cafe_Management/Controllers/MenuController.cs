@@ -1,4 +1,5 @@
 ﻿using Cafe_Management.Application.Services;
+using Cafe_Management.Code;
 using Cafe_Management.Core.Entities;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +20,25 @@ namespace Cafe_Management.Controllers
         [HttpGet]
         public async Task<IActionResult> GetMenus(Nullable<int> Menu_ID, Nullable<bool> IsActive)
         {
-            var result = await _menuService.GetMenus(Menu_ID, IsActive);
+            APIResult result = new APIResult();
+            try
+            {
+                var data = await _menuService.GetMenus(Menu_ID, IsActive);
+
+
+                if (data != null)
+                {
+                    result.Data = data;
+                    result.Message = "Successfully";
+                    result.Status = 200;
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Message = ex.Message;
+                result.Status = 0;
+            }
+
             return Ok(result);
         }
 

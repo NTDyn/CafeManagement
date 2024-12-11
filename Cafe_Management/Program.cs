@@ -91,6 +91,12 @@ builder.Services.AddScoped<SpoiledIngredientService>();
 
 builder.Services.AddScoped<IBatchRecipeRepository, BatchRecipeRepository>();
 builder.Services.AddScoped<BatchRecipeService>();
+//CustomerLevel
+builder.Services.AddScoped<ICustomerLevelRepository, CustomerLevelRepository>();
+builder.Services.AddScoped<CustomerLevelService>();
+//Customer
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<CustomerService>();
 
 var app = builder.Build();
 app.UseCors("CorsApi");
