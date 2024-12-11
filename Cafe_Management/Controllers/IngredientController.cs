@@ -98,7 +98,7 @@ namespace Cafe_Management.Controllers
             {
                 var ingredients = await _ingredientService.getIngredientActive();
                 APIResult result = new APIResult();
-                if (ingredients != null && ingredients.Any())
+                if (ingredients != null )
                 {
                     result = new APIResult
                     {
@@ -122,7 +122,7 @@ namespace Cafe_Management.Controllers
             {
                 return BadRequest(new APIResult
                 {
-                    Message = ex.InnerException?.Message,
+                    Message = ex.Message,
                     Status = 400
                 });
             }

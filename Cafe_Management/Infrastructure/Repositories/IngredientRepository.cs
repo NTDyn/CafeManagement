@@ -88,7 +88,7 @@ namespace Cafe_Management.Infrastructure.Repositories
 
         public async Task<IEnumerable<Ingredient>> GetIngredientActive()
         {
-            return await _context.Ingredient.Where(i => i.IsActive == true).ToListAsync();
+            return await _context.Ingredient.Where(i =>i.IsActive==true).ToListAsync();
         }
     }
 }
