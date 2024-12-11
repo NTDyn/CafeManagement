@@ -90,6 +90,10 @@ builder.Services.AddScoped<CustomerService>();
 builder.Services.AddScoped<IRequestImportRepository, RequestImportRepository>();
 builder.Services.AddScoped<RequestImportService>();
 
+//RecipeRaw
+builder.Services.AddScoped<IRecipeRawRepository, RecipeRawRepository>();
+builder.Services.AddScoped<RecipeRawService>();
+
 var app = builder.Build();
 app.UseCors("CorsApi");
 // Configure the HTTP request pipeline

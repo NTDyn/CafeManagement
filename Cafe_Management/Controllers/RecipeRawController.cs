@@ -74,6 +74,7 @@ namespace Cafe_Management.Controllers
                 }
 
                 await _recipeRawService.AddRecipeRaw(recipeRaw);
+                result.Data = recipeRaw;
                 result.Status = 200;
                 result.Message = "Successfully";
             }
