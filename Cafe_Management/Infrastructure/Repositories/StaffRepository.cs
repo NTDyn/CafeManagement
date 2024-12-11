@@ -95,5 +95,18 @@ namespace Cafe_Management.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<Staff> getStaffByUserName(string userName)
+        {
+            return await _context.Staff.Where(x => x.Username == userName).FirstOrDefaultAsync();
+        }
+
+        public async Task<Staff> getStaffById(int id)
+        {
+            var staff = await _context.Staff.Where(x=>x.Staff_ID==id).FirstOrDefaultAsync();
+            return staff;
+
+
+        }
     }
 }

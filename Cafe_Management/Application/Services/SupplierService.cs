@@ -37,5 +37,9 @@ namespace Cafe_Management.Application.Services
         {
             return await _supplierRepository.checkExistNameForUpdate(supplier);
         }
+        public async Task<IEnumerable<Supplier>> getSupplierActive()
+        {
+            return await _supplierRepository.GetSupplierActive();
+        }
     }
 }

@@ -35,5 +35,10 @@ namespace Cafe_Management.Application.Services
             await _ingredientRepository.UpdateIngredient(ingredient);
         }
 
+        public async Task<IEnumerable<Ingredient>> getIngredientActive()
+        {
+            return await _ingredientRepository.GetIngredientActive();
+        }
+
     }
 }

@@ -9,5 +9,7 @@ namespace Cafe_Management.Core.Interfaces
 
         Task AddWarehouse(Warehouse warehouse);
         Task UpdateWarehouse(Warehouse warehouse);
+        Task<IEnumerable<Warehouse>> GetWareHouseActive();
+        Task<Warehouse> getWareHouseById(int id);
     }
 }

@@ -33,5 +33,13 @@ namespace Cafe_Management.Application.Services
         {
             await _staffRepository.Update(staff);
         }
+        public async Task<Staff>getStaffByUserName(string userName)
+        {
+            return await _staffRepository.getStaffByUserName(userName);
+        }
+        public async Task<Staff>getStaffById(int id)
+        {
+            return await _staffRepository.getStaffById(id);
+        }
     }
 }

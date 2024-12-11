@@ -9,5 +9,7 @@ namespace Cafe_Management.Core.Interfaces
         Task<IEnumerable<Ingredient>> GetAllIngredients(Nullable<int> Type = null);
         Task AddIngredient(Ingredient ingredient);
         Task UpdateIngredient(Ingredient ingredient);
+        Task<IEnumerable<Ingredient>> GetIngredientActive();
+
     }
 }
