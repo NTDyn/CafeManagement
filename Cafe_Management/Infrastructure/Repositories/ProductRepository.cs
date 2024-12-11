@@ -28,12 +28,29 @@ namespace Cafe_Management.Infrastructure.Repositories
 
         public async Task<Product?> GetProductByIdAsync(int id)
         {
-            return await _context.Products.FindAsync(id);
+            return await _context.Products
+                .Where(p=> p.Product_ID == id)
+        .Select(p => new Product
+        {
+
+            Product_ID = p.Product_ID,
+            Product_Name = p.Product_Name,
+            Product_Category = p.Product_Category,
+            Price = p.Price,
+            Point = p.Point,
+            IsActive = p.IsActive,
+            CreatedDate = p.CreatedDate,
+            ModifiedDate = p.ModifiedDate,
+            Product_Image = p.Product_Image,
+
+            ProductRecipe = _context.ProductRecipe
+                .Where(r => r.Product_ID == p.Product_ID)
+                .ToList()
+        }).FirstOrDefaultAsync();
         }
 
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
-            List<ProductRecipe> ProductRecipes = _context.ProductRecipe.ToList();
             return await _context.Products
         .Select(p => new Product
         {
@@ -46,8 +63,11 @@ namespace Cafe_Management.Infrastructure.Repositories
             IsActive = p.IsActive,
             CreatedDate = p.CreatedDate,
             ModifiedDate = p.ModifiedDate,
-            ProductRecipe = ProductRecipes,
-            Product_Image = p.Product_Image
+            Product_Image = p.Product_Image,
+
+            ProductRecipe = _context.ProductRecipe
+                .Where(r => r.Product_ID == p.Product_ID)
+                .ToList()
         }).ToListAsync();
         }
 
@@ -144,6 +164,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                     foreach (var recipe in product.ProductRecipe)
                     {
                         recipe.ModifiedDate = DateTime.Now;
+                        recipe.Product_ID = product.Product_ID;
                         bool exists = currentProductRecipe.Any(r => r.Ingredient_ID == recipe.Ingredient_ID);
                         if (exists == true)
                         {
@@ -152,6 +173,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                         }
                         else
                         {
+
                             await _productRecipeRepository.AddProductRecipe(recipe);
                         }
 
