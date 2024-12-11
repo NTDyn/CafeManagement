@@ -84,5 +84,81 @@ namespace Cafe_Management.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
+        [HttpGet("active")]
+        public async Task<IActionResult> getWareHouseActive()
+        {
+            
+            try
+            {
+                var warehouse = await _warehouseService.GetWareHouseActive();
+                APIResult result = new APIResult();
+
+                if (warehouse!=null && warehouse.Any())
+                {
+                    result = new APIResult
+                    {
+                        Data = warehouse,
+                        Message = "successfuly",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Successfuly",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.InnerException?.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpGet("id")]
+        public async Task<IActionResult>getWareHouseById(int id)
+        {
+            try
+            {
+                var warehouse = await _warehouseService.getWareHouseById(id);
+                APIResult result = new APIResult();
+                if (warehouse != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = warehouse,
+                        Message = "Successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+            }catch(Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.InnerException?.Message,
+                    Status = 400
+                });
+            }
+        }
     }
 }

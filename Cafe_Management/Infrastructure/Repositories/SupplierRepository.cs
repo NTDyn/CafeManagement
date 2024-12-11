@@ -43,6 +43,11 @@ namespace Cafe_Management.Infrastructure.Repositories
             return await _dbContext.Supplier.ToListAsync();
         }
 
+        public async Task<IEnumerable<Supplier>> GetSupplierActive()
+        {
+            return await _dbContext.Supplier.Where(x => x.IsActive == true).ToListAsync();
+        }
+
         public async Task<Supplier?> GetSupplierById(int id)
         {
             return await _dbContext.Supplier.FindAsync(id);
@@ -50,6 +55,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 
         }
 
+        
         public async Task UpdateSupplier(Supplier supplier)
         {
             var checkSupplier = await _dbContext.Supplier.FirstOrDefaultAsync(s => s.Supplier_ID == supplier.Supplier_ID);
@@ -62,6 +68,7 @@ namespace Cafe_Management.Infrastructure.Repositories
             }
            
         }
+       
     }
 
 

@@ -9,7 +9,7 @@ namespace Cafe_Management.Controllers
     [EnableCors("CorsApi")]
     [ApiController]
     [Route("api/[controller]")]
-    public class IngredientController :ControllerBase
+    public class IngredientController : ControllerBase
     {
         private readonly IngredientService _ingredientService;
 
@@ -74,7 +74,7 @@ namespace Cafe_Management.Controllers
                 await _ingredientService.UpdateIngredient(ingredient);
                 APIResult result = new APIResult
                 {
-                    Data = ingredient, 
+                    Data = ingredient,
                     Message = "Successfully ",
                     Status = 200
                 };
@@ -89,6 +89,84 @@ namespace Cafe_Management.Controllers
                     Status = 400
                 });
             }
+        }
+
+        [HttpGet("active")]
+        public async Task<IActionResult> GetIngredientActive()
+        {
+            try
+            {
+                var ingredients = await _ingredientService.getIngredientActive();
+                APIResult result = new APIResult();
+                if (ingredients != null && ingredients.Any())
+                {
+                    result = new APIResult
+                    {
+                        Data = ingredients,
+                        Message = "Successfuly",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Successfuly",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+            } catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.InnerException?.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult>getIngredientById(int id)
+        {
+            try
+            {
+                var ingredient = await _ingredientService.GetIngredientById(id);
+                APIResult result = new APIResult();
+                if (ingredient != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = ingredient,
+                        Message = "successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+            }catch(Exception ex)
+            {
+                return BadRequest(
+                    new APIResult
+                    {
+                        Message = ex.InnerException?.Message,
+                        Status = 400
+                    }
+                    );
+
+                
+            }
+
         }
 
     }

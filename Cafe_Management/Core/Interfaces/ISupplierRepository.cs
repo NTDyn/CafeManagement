@@ -10,5 +10,6 @@ namespace Cafe_Management.Core.Interfaces
         Task AddSupplier(Supplier supplier);
         Task UpdateSupplier(Supplier supplier);
         Task<bool> checkExistNameForUpdate(Supplier supplier);
+        Task<IEnumerable<Supplier>> GetSupplierActive();
     }
 }
