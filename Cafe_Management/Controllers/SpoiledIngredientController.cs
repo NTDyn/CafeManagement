@@ -76,6 +76,7 @@ namespace Cafe_Management.Controllers
                 await _spoiledIngredientService.Create(SpoiledIngredient);
                 result.Status = 200;
                 result.Message = "Successfully";
+                result.Data = await _spoiledIngredientService.Get(SpoiledIngredient.Spoiled_ID);
             }
             catch (Exception ex)
             {
@@ -83,7 +84,7 @@ namespace Cafe_Management.Controllers
                 result.Message = ex.Message;
             }
 
-            return CreatedAtAction(nameof(Get), new { id = SpoiledIngredient.Spoiled_ID }, result);
+            return Ok(result);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 _Filter = Function.AndAlso(_Filter, x => x.Spoiled_ID == Spoiled_ID);
             }
             List<SpoiledIngredient> SpoiledIngredient = await _context.SpoiledIngredient.Where(_Filter).ToListAsync();
-            List<SpoiledIngredientDetail> SpoiledIngredientDetail = await _context.SpoiledIngredientDetail.Where(x => x.IsActive == true).ToListAsync();
+            List<SpoiledIngredientDetail> SpoiledIngredientDetail = await _context.SpoiledIngredientDetail.ToListAsync();
             var JoinData = (from h in SpoiledIngredient
                             join d in SpoiledIngredientDetail
                             on h.Spoiled_ID equals d.Spoiled_ID
@@ -57,6 +57,9 @@ namespace Cafe_Management.Infrastructure.Repositories
                     if (d.Quality > 0)
                     {
                         d.Spoiled_ID = ID;
+                        d.CreatedDate = DateTime.Now;
+                        d.ModifiedDate = DateTime.Now;
+                        d.IsActive = true;
                         await _context.SpoiledIngredientDetail.AddAsync(d);
 
                         Ingredient? ingredient = await _context.Ingredient.FindAsync(d.Ingredient_ID);
