@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\application\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\application\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\infrastructure\\repositories\\ingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\infrastructure\\repositories\\ingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\infrastructure\\repositories\\requestimportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\infrastructure\\repositories\\requestimportrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -99,10 +111,6 @@
       "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\application\\services\\supplierservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\application\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\application\\services\\ingredientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\core\\entities\\ingredientsupplierdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\core\\entities\\ingredientsupplierdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -161,14 +169,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\controllers\\ingredientcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\infrastructure\\repositories\\ingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|solutionrelative:cafe_management\\infrastructure\\repositories\\ingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EBCCDD8F-274B-41FD-8A2B-AEE21F715BB4}|Cafe_Management\\Cafe_Management.csproj|c:\\users\\hp_pc\\.netproject\\project\\cafemanagement\\cafe_management\\core\\interfaces\\iingredientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -295,63 +295,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SupplierLinkDTO.cs",
-              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
-              "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
-              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
-              "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T20:01:26.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SupplierController.cs",
-              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\SupplierController.cs",
-              "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\SupplierController.cs",
-              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\SupplierController.cs",
-              "RelativeToolTip": "Cafe_Management\\Controllers\\SupplierController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAkwJAAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:43:31.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "RequestImportRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\RequestImportRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Repositories\\RequestImportRepository.cs",
               "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\RequestImportRepository.cs",
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Repositories\\RequestImportRepository.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAADwv6kAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAADwv6QAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T11:08:49.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SupplierDetailUpdateDto.cs",
-              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
-              "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
-              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
-              "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T06:22:12.335Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "SupplierDetailDTO.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierDetailDTO.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\SupplierDetailDTO.cs",
@@ -359,12 +320,11 @@
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\SupplierDetailDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T20:01:40.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T20:01:40.821Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "SupplierLinkUpdateDto.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierLinkUpdateDto.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\SupplierLinkUpdateDto.cs",
@@ -372,12 +332,86 @@
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\SupplierLinkUpdateDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T06:20:52.886Z",
+              "WhenOpened": "2024-12-11T06:20:52.886Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IngredientController.cs",
+              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\IngredientController.cs",
+              "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\IngredientController.cs",
+              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\IngredientController.cs",
+              "RelativeToolTip": "Cafe_Management\\Controllers\\IngredientController.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAkwGIAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:34:24.918Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IngredientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
+              "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
+              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
+              "RelativeToolTip": "Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAtwFgAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:46:40.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "IngredientService.cs",
+              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\IngredientService.cs",
+              "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\IngredientService.cs",
+              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\IngredientService.cs",
+              "RelativeToolTip": "Cafe_Management\\Application\\Services\\IngredientService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwCcAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T05:48:49.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SupplierDetailUpdateDto.cs",
+              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
+              "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
+              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
+              "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\SupplierDetailUpdateDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-11T06:22:12.335Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "SupplierController.cs",
+              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\SupplierController.cs",
+              "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\SupplierController.cs",
+              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\SupplierController.cs",
+              "RelativeToolTip": "Cafe_Management\\Controllers\\SupplierController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwJAAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T04:43:31.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SupplierLinkDTO.cs",
+              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
+              "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
+              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
+              "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\SupplierLinkDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-08T20:01:26.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "RequestImport.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\RequestImport.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\RequestImport.cs",
@@ -385,12 +419,11 @@
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\RequestImport.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T19:53:18.692Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T19:53:18.692Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "UpdateImportRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\UpdateImportRequestDto.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\UpdateImportRequestDto.cs",
@@ -398,12 +431,11 @@
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\UpdateImportRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T06:08:35.754Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T06:08:35.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "RequestImportController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\RequestImportController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\RequestImportController.cs",
@@ -411,12 +443,11 @@
               "RelativeToolTip": "Cafe_Management\\Controllers\\RequestImportController.cs",
               "ViewState": "AgIAAMcAAAAAAAAAAAAwwN4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T11:03:23.188Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T11:03:23.188Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "IngredientSupplierRequest.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\IngredientSupplierRequest.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\IngredientSupplierRequest.cs",
@@ -424,12 +455,11 @@
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\IngredientSupplierRequest.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T14:11:52.548Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T14:11:52.548Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "IMenuRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Interfaces\\IMenuRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Interfaces\\IMenuRepository.cs",
@@ -437,12 +467,11 @@
               "RelativeToolTip": "Cafe_Management\\Core\\Interfaces\\IMenuRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T14:35:45.328Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T14:35:45.328Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "RequestImportService.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\RequestImportService.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\RequestImportService.cs",
@@ -450,12 +479,11 @@
               "RelativeToolTip": "Cafe_Management\\Application\\Services\\RequestImportService.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAkwCoAAAB4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T11:13:58.344Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T11:13:58.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "IRequestImportRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Interfaces\\IRequestImportRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Interfaces\\IRequestImportRepository.cs",
@@ -463,12 +491,11 @@
               "RelativeToolTip": "Cafe_Management\\Core\\Interfaces\\IRequestImportRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAB+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T11:04:30.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-08T11:04:30.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "ISpoiledIngredientRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Interfaces\\ISpoiledIngredientRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Interfaces\\ISpoiledIngredientRepository.cs",
@@ -476,12 +503,11 @@
               "RelativeToolTip": "Cafe_Management\\Core\\Interfaces\\ISpoiledIngredientRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T11:31:30.908Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-11T11:31:30.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "DetaiImportWithIngredientDto.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\DetaiImportWithIngredientDto.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\DetaiImportWithIngredientDto.cs",
@@ -489,12 +515,11 @@
               "RelativeToolTip": "Cafe_Management\\Infrastructure\\Model\\DetaiImportWithIngredientDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-10T15:20:10.158Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T15:20:10.158Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "IngredientSupplierLink.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Entities\\IngredientSupplierLink.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Entities\\IngredientSupplierLink.cs",
@@ -506,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ChangeStatusRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Model\\ChangeStatusRequestDto.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Model\\ChangeStatusRequestDto.cs",
@@ -518,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "ISupplierRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Interfaces\\ISupplierRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Interfaces\\ISupplierRepository.cs",
@@ -530,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "SpoiledIngredientController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\SpoiledIngredientController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\SpoiledIngredientController.cs",
@@ -542,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "ReceiptService.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\ReceiptService.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\ReceiptService.cs",
@@ -554,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "IStaffRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Interfaces\\IStaffRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Interfaces\\IStaffRepository.cs",
@@ -566,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "StaffRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\StaffRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Repositories\\StaffRepository.cs",
@@ -578,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "SupplierRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\SupplierRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Repositories\\SupplierRepository.cs",
@@ -590,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "SupplierService.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\SupplierService.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\SupplierService.cs",
@@ -602,19 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IngredientService.cs",
-              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\IngredientService.cs",
-              "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\IngredientService.cs",
-              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\IngredientService.cs",
-              "RelativeToolTip": "Cafe_Management\\Application\\Services\\IngredientService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T05:48:49.449Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "IngredientSupplierDetail.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Entities\\IngredientSupplierDetail.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Entities\\IngredientSupplierDetail.cs",
@@ -626,7 +639,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "SpoiledIngredientDetail.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Entities\\SpoiledIngredientDetail.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Entities\\SpoiledIngredientDetail.cs",
@@ -638,7 +651,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "Ingredient.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Entities\\Ingredient.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Entities\\Ingredient.cs",
@@ -650,7 +663,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "Supplier.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Entities\\Supplier.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Entities\\Supplier.cs",
@@ -662,7 +675,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 31,
               "Title": "Staff.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Entities\\Staff.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Entities\\Staff.cs",
@@ -674,7 +687,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "StaffService.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\StaffService.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\StaffService.cs",
@@ -686,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "WarehouseController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\WarehouseController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\WarehouseController.cs",
@@ -698,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "StaffGroupService.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\StaffGroupService.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\StaffGroupService.cs",
@@ -710,7 +723,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "StaffController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\StaffController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\StaffController.cs",
@@ -722,7 +735,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "ProductController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\ProductController.cs",
@@ -734,7 +747,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "WarehouseService.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Application\\Services\\WarehouseService.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Application\\Services\\WarehouseService.cs",
@@ -746,7 +759,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "WarehouseRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\WarehouseRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Repositories\\WarehouseRepository.cs",
@@ -758,7 +771,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "IWarehouseRepository.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Core\\Interfaces\\IWarehouseRepository.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Core\\Interfaces\\IWarehouseRepository.cs",
@@ -770,7 +783,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "IngredientCategoryController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\IngredientCategoryController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\IngredientCategoryController.cs",
@@ -782,19 +795,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "IngredientController.cs",
-              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\IngredientController.cs",
-              "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\IngredientController.cs",
-              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\IngredientController.cs",
-              "RelativeToolTip": "Cafe_Management\\Controllers\\IngredientController.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAwwKMAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:34:24.918Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "Cafe_Management\\Controllers\\LoginController.cs",
@@ -803,18 +804,6 @@
               "ViewState": "AgIAABYAAAAAAAAAAAAQwB8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T08:08:48.295Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "IngredientRepository.cs",
-              "DocumentMoniker": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
-              "RelativeDocumentMoniker": "Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
-              "ToolTip": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
-              "RelativeToolTip": "Cafe_Management\\Infrastructure\\Repositories\\IngredientRepository.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwDsAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-08T04:46:40.869Z"
             },
             {
               "$type": "Document",

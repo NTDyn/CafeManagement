@@ -37,7 +37,7 @@ namespace Cafe_Management.Application.Services
 
         public async Task<IEnumerable<Ingredient>> getIngredientActive()
         {
-            return await _ingredientRepository.GetAllIngredients();
+            return await _ingredientRepository.GetIngredientActive();
         }
 
     }
