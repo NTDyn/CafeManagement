@@ -11,9 +11,11 @@ namespace Cafe_Management.Infrastructure.Repositories
     public class RequestImportRepository : IRequestImportRepository
     {
         private readonly AppDbContext _appDbContext;
+   
         public RequestImportRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
+           
         }
 
         public async Task<bool> CreateSupplierLinkAndDetailsAsync(SupplierLinkDTO supplierLinkDTO, List<SupplierDetailDTO> supplierDetailDTOs)
@@ -72,6 +74,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                             Unit_Max = ingredient.Unit_Max
                         };
             return await query.ToListAsync();
+
         }
 
 
@@ -161,14 +164,37 @@ namespace Cafe_Management.Infrastructure.Repositories
 
             if (isUpdated)
             {
+               List<DetaiImportWithIngredientDto>  detail = await getDetailwithIgrdient(link.Link_ID);
+                foreach (var item in detail)
+                {
+                   
+                    var store = new StoreIngredient
+                    {
+                        Warehouse_ID = 1,
+                        Ingredient_ID = item.Ingredient_ID,
+                        Price = item.Price,
+                        Quality = item.Quality,
+                        IsActive = true,
+                        CreatedDate = DateTime.Now,
+                        ModifiedDate = DateTime.Now
+                    };
+
+                    await _appDbContext.StoreIngredient.AddAsync(store);
+                    await _appDbContext.SaveChangesAsync();
+
+
+                }
                 // Tính lại tổng tiền
                 link.TotalPrice = (int) await _appDbContext.IngredientSupplierDetail.Where(d => link.Link_ID == d.Header_ID).SumAsync(d => d.Quality * d.Price);
                 link.Status = 3;
                 link.StaffReceived_ID = supplierLinkDto.StaffReceivedID;
-
+                
                 // Lưu các thay đổi
+               await _appDbContext.SaveChangesAsync();
             
-                await _appDbContext.SaveChangesAsync();
+               
+
+                
                
                 return true;
             }

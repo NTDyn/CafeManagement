@@ -33,6 +33,8 @@ namespace Cafe_Management.Infrastructure.Repositories
                             {
                                 Receipt_ID = h.Receipt_ID,
                                 Staff_ID = h.Staff_ID,
+                                Customer_ID = h.Customer_ID,
+                                Status = h.Status,
                                 IsActive = h.IsActive,
                                 TotalPrice = h.TotalPrice,
                                 CreatedDate = h.CreatedDate,

@@ -9,7 +9,9 @@ namespace Cafe_Management.Core.Entities
         [Key]
         public int Receipt_ID { get; set; }
         public int Staff_ID { get; set; }
+        public int Customer_ID { get; set; }
         public int TotalPrice { get; set; }
+        public int Status { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }

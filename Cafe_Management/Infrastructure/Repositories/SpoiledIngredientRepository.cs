@@ -74,6 +74,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                             //TRU KHO
                             double Quan = (double)storeIngredient.Quality - TotalQuantity;
                             storeIngredient.Quality = Quan;
+
                         }
                         else
                         {
@@ -82,7 +83,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                             add.Ingredient_ID = d.Ingredient_ID;
                             add.Price = 0;
                             add.Quality = TotalQuantity;
-                            await _context.StoreIngredient.AddAsync(storeIngredient);
+                            await _context.StoreIngredient.AddAsync(add);
                         }
                     }
 
