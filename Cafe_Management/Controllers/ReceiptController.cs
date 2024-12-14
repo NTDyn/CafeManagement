@@ -50,6 +50,7 @@ namespace Cafe_Management.Controllers
             {
                 if (Receipt.Staff_ID == null)
                 {
+
                     result.Status = 0;
                     result.Message = "Staff_ID cannot be empty";
                     return BadRequest();
@@ -72,6 +73,7 @@ namespace Cafe_Management.Controllers
                     }
                 }
                 await _receiptService.Create(Receipt);
+                result.Data = Receipt;
                 result.Status = 200;
                 result.Message = "Successfully";
             }

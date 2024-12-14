@@ -44,7 +44,7 @@ namespace Cafe_Management.Infrastructure.Repositories
             return JoinData;
         }
 
-        public async Task Create(Receipt Receipt)
+        public async Task Create(Receipt Receipt )
         {
             Receipt.CreatedDate = DateTime.Now;
             Receipt.ModifiedDate = DateTime.Now;
@@ -85,14 +85,41 @@ namespace Cafe_Management.Infrastructure.Repositories
                                 add.Ingredient_ID = recipe.Ingredient_ID;
                                 add.Price = 0;
                                 add.Quality = TotalRecipe;
-                                await _context.StoreIngredient.AddAsync(storeIngredient);
+                                await _context.StoreIngredient.AddAsync(add);
                             }
                         }
                     }
                     
                 }
+                
             }
             Receipt.TotalPrice = TotalPrice;
+            if(Receipt.Cuppon_ID != null)
+            {
+                var cuppon = await _context.Cuppon.FindAsync(Receipt.Cuppon_ID);
+                double priceDis = 0.0;
+                if(cuppon.Cuppon_Type == 0)
+                {
+                    priceDis = (double)((double)cuppon.Disscount / 100 * Receipt.TotalPrice);
+                }
+                if(cuppon.Cuppon_Type == 1)
+                {
+                    priceDis = (double)cuppon.Disscount;
+                }
+                HistoryDisscount hd = new HistoryDisscount
+                {
+                    Customer_ID = (int) Receipt.Customer_ID,
+                    Cuppon_ID = (int)cuppon.Cuppon_ID,
+                    PriceDisscount = (int)priceDis,
+                    Receipt_ID =(int) ID,
+                    IsActive = true,
+                    CreatedDate = DateTime.Now,
+                    ModifiedDate = DateTime.Now
+                };
+                await _context.HistoryDisscount.AddAsync(hd);
+                Receipt.TotalPrice =(int) (TotalPrice - priceDis);
+            }
+            
             await _context.Receipt.AddAsync(Receipt);
             await _context.SaveChangesAsync();
         }
