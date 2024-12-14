@@ -92,10 +92,10 @@ namespace Cafe_Management.Infrastructure.Repositories
                     batchRecipeDetail.CreatedDate = DateTime.Now;
                     batchRecipeDetail.ModifiedDate = DateTime.Now;
                     StoreIngredient? storeIngredientRaw = await _context.StoreIngredient.Where(x => x.Ingredient_ID == recipe.Ingredient_Raw).SingleOrDefaultAsync();
-                    if (storeIngredient != null)
+                    if (storeIngredientRaw != null)
                     {
                         //Tru kho
-                        double Quan = (double)storeIngredient.Quality - Quantity;
+                        double Quan = (double)storeIngredientRaw.Quality - Quantity;
                         storeIngredientRaw.Quality = Quan;
                     }
                     else
