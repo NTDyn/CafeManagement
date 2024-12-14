@@ -1,6 +1,7 @@
 ﻿using Cafe_Management.Application.Services;
 using Cafe_Management.Code;
 using Cafe_Management.Core.Entities;
+using Cafe_Management.Infrastructure.Model;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
@@ -84,6 +85,84 @@ namespace Cafe_Management.Controllers
             }
 
             return CreatedAtAction(nameof(Get), new { id = Receipt.Receipt_ID }, result);
+        }
+
+        [HttpPost("createCheckout")]
+        public async Task<IActionResult> createReceiptCheckout(Receipt receipt)
+        {
+            try
+            {
+                await _receiptService.CreateReceiptCheckout(receipt);
+                return Ok(new APIResult
+                {
+                    Message = "successful",
+                    Status = 200
+                });
+            }catch(Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpPost("addCart")]
+        public async Task<IActionResult> addCart([FromBody] AddCartDto addCart)
+        {
+            try
+            {
+                await _receiptService.AddCart(addCart.receiptDetail, addCart.id_customer);
+                return Ok(new APIResult
+                {
+                    Message = "successful",
+                    Status = 200
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpGet("getcart")]
+        public async Task<IActionResult> getCart( int id)
+        {
+            try
+            {
+                APIResult result = new APIResult();
+                var listCart = await _receiptService.getCartofCustomer(id);
+                if (listCart != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = listCart,
+                        Message = "successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Cart is Empty",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+            }catch(Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
         }
 
     }

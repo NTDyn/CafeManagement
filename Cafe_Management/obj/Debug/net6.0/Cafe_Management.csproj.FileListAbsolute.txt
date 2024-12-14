@@ -287,3 +287,5 @@ C:\Users\hp_pc\.NetProject\PROJECT\CafeManagement\Cafe_Management\obj\Debug\net6
 C:\Users\hp_pc\.NetProject\PROJECT\CafeManagement\Cafe_Management\obj\Debug\net6.0\Cafe_Management.pdb
 C:\Users\hp_pc\.NetProject\PROJECT\CafeManagement\Cafe_Management\obj\Debug\net6.0\Cafe_Management.genruntimeconfig.cache
 C:\Users\hp_pc\.NetProject\PROJECT\CafeManagement\Cafe_Management\obj\Debug\net6.0\ref\Cafe_Management.dll
+C:\Users\hp_pc\.NetProject\PROJECT\CafeManagement\Cafe_Management\bin\Debug\net6.0\Microsoft.Practices.ServiceLocation.dll
+C:\Users\hp_pc\.NetProject\PROJECT\CafeManagement\Cafe_Management\bin\Debug\net6.0\XAct.Core.PCL.dll

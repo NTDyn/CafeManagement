@@ -28,5 +28,9 @@ namespace Cafe_Management.Application.Services
         {
             await _customerRepository.UpdateCustomer(customer);
         }
+        public async Task<Customer> getCustomerByUserName(string userName)
+        {
+            return await _customerRepository.getCustomerByUserName(userName);
+        }
     }
 }

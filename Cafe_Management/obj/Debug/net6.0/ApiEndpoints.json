@@ -32,6 +32,59 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafe_Management.Controllers.CupponController",
+    "Method": "GetCuppons",
+    "RelativePath": "api/Cuppon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Cuppon_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "IsActive",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.CupponController",
+    "Method": "AddCuppon",
+    "RelativePath": "api/Cuppon",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cuppon",
+        "Type": "Cafe_Management.Core.Entities.Cuppon",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.CupponController",
+    "Method": "UpdateCuppon",
+    "RelativePath": "api/Cuppon",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cuppon",
+        "Type": "Cafe_Management.Core.Entities.Cuppon",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.CustomerController",
     "Method": "GetCustomers",
     "RelativePath": "api/Customer",
@@ -85,6 +138,22 @@
         "Name": "customer",
         "Type": "Cafe_Management.Core.Entities.Customer",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.CustomerController",
+    "Method": "getCustomerByUserName",
+    "RelativePath": "api/Customer/userName",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -290,6 +359,27 @@
     ]
   },
   {
+    "ContainingType": "Cafe_Management.Controllers.LoginController",
+    "Method": "LoginUser",
+    "RelativePath": "api/Login/user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.MenuController",
     "Method": "GetMenus",
     "RelativePath": "api/Menu",
@@ -391,6 +481,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafe_Management.Controllers.PaymentController",
+    "Method": "CreatePayment",
+    "RelativePath": "api/Payment/create-payment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "paymentRequest",
+        "Type": "Cafe_Management.Infrastructure.Model.PaymentRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.PaymentController",
+    "Method": "PaymentReturn",
+    "RelativePath": "api/Payment/return",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "query",
+        "Type": "Microsoft.AspNetCore.Http.IQueryCollection",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.ProductController",
     "Method": "GetAllProducts",
     "RelativePath": "api/Product",
@@ -434,6 +556,22 @@
         "Name": "product",
         "Type": "Cafe_Management.Core.Entities.Product",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ProductController",
+    "Method": "getProductById",
+    "RelativePath": "api/Product/id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -562,6 +700,54 @@
         "Name": "Receipt",
         "Type": "Cafe_Management.Core.Entities.Receipt",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "addCart",
+    "RelativePath": "api/Receipt/addCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addCart",
+        "Type": "Cafe_Management.Infrastructure.Model.AddCartDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "createReceiptCheckout",
+    "RelativePath": "api/Receipt/createCheckout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "receipt",
+        "Type": "Cafe_Management.Core.Entities.Receipt",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "getCart",
+    "RelativePath": "api/Receipt/getcart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

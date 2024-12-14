@@ -87,5 +87,10 @@ namespace Cafe_Management.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<Customer> getCustomerByUserName(string userName)
+        {
+            return await _context.Customer.Where(c => c.Username == userName).FirstOrDefaultAsync();
+        }
     }
 }

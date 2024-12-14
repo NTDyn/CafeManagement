@@ -9,5 +9,6 @@ namespace Cafe_Management.Core.Interfaces
                                                Nullable<int> Level_ID);
         Task AddCustomer(Customer customer);
         Task UpdateCustomer(Customer customer);
+        Task<Customer> getCustomerByUserName(string userName);
     }
 }

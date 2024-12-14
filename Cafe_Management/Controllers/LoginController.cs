@@ -68,5 +68,66 @@ namespace Cafe_Management.Controllers
             }
             return result;
         }
+        [HttpPost("user")]
+        public async Task<IActionResult>LoginUser(string userName,string password)
+        {
+            try
+            {
+                APIResult result = new APIResult();
+                if (userName == null || password == null)
+                {
+                    result = new APIResult
+                    {
+                        Status = 0,
+                        Message = "username and password are not empty"
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    Customer cus =await _context.Customer.Where(c => c.Username == userName && c.Password == password).SingleOrDefaultAsync();
+                    if (cus == null)
+                    {
+                        result = new APIResult
+                        {
+                            Message = "Username or password incorrect",
+                            Status=0
+                        };
+                        return Ok(result);
+                    }
+                    else
+                    {
+                        if (cus.IsActive==false)
+                        {
+                            result = new APIResult
+                            {
+                                Message = "Account is not working",
+                                Status = 0
+                            };
+                            return Ok(result);
+                        }
+                        else
+                        {
+                            result = new APIResult
+                            {
+                                Message = "Login Successful",
+                                Data = cus,
+                                Status = 200
+                            };
+                            return Ok(result);
+                        }
+                    }
+                   
+                }
+            }
+            catch
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = "Something went wrong",
+                    Status = 400
+                });
+            }
+        }
     }
 }

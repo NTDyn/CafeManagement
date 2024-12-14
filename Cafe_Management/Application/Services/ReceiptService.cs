@@ -21,5 +21,19 @@ namespace Cafe_Management.Application.Services
         {
             await _receiptRepository.Create(Receipt);
         }
+
+        public async Task CreateReceiptCheckout(Receipt receipt)
+        {
+            await _receiptRepository.CreateReceiptCheckout(receipt);
+        }
+        public async Task AddCart(ReceiptDetail receiptDetail,int id)
+        {
+           await _receiptRepository.CreateCart(receiptDetail,id);
+        }
+        public async Task<IEnumerable<Receipt>>getCartofCustomer(int id)
+        {
+            return await _receiptRepository.GetCartByIdCustomer(id);
+        }
+     
     }
 }

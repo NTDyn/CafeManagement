@@ -103,5 +103,41 @@ namespace Cafe_Management.Controllers
             result.Message = "Successfully";
             return Ok(result);
         }
+        [HttpGet("userName")]
+        public async Task<IActionResult>getCustomerByUserName(string userName)
+        {
+            try
+            {
+                var cus = await _customerService.getCustomerByUserName(userName);
+                APIResult result = new APIResult();
+                if (cus != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = cus,
+                        Status = 200,
+                        Message = "Success"
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Not Found",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+            }catch(Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
     }
 }
