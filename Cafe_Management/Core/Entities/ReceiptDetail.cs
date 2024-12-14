@@ -13,6 +13,7 @@ namespace Cafe_Management.Core.Entities
         public int Quantity { get; set; }
         public int Price { get; set; }
         public bool IsActive { get; set; }
+        public int status { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
     }

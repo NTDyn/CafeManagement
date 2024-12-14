@@ -12,5 +12,6 @@ namespace Cafe_Management.Core.Interfaces
         Task<IEnumerable<Product>> GetAllAsync(Nullable<bool> isActive);
         Task AddAsync(Product product);
         Task UpdateAsync(Product product);
+
     }
 }

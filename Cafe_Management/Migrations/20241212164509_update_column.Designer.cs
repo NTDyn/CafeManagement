@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cafe_Management.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241208041800_revertDb")]
-    partial class revertDb
+    [Migration("20241212164509_update_column")]
+    partial class update_column
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,31 +26,31 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.BatchRecipe", b =>
                 {
-                    b.Property<int>("BatchRecipe_ID")
+                    b.Property<int?>("BatchRecipe_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BatchRecipe_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("BatchRecipe_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("IngredientResult_ID")
+                    b.Property<int?>("IngredientResult_ID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Quality")
+                    b.Property<double?>("Quality")
                         .HasColumnType("float");
 
-                    b.Property<int>("Staff_ID")
+                    b.Property<int?>("Staff_ID")
                         .HasColumnType("int");
 
-                    b.Property<int>("Unit")
+                    b.Property<int?>("Unit")
                         .HasColumnType("int");
 
                     b.HasKey("BatchRecipe_ID");
@@ -94,38 +94,37 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.Cuppon", b =>
                 {
-                    b.Property<int>("Cuppon_ID")
+                    b.Property<int?>("Cuppon_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Cuppon_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Cuppon_ID"), 1L, 1);
 
-                    b.Property<int>("ApplyLevel_ID")
+                    b.Property<int?>("ApplyLevel_ID")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Cuppon_Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Cuppon_Type")
+                    b.Property<int?>("Cuppon_Type")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("DateEnd")
+                    b.Property<DateTime?>("DateEnd")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DateStart")
+                    b.Property<DateTime?>("DateStart")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Disscount")
+                    b.Property<double?>("Disscount")
                         .HasColumnType("float");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Cuppon_ID");
@@ -135,35 +134,44 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.Customer", b =>
                 {
-                    b.Property<int>("Customer_Id")
+                    b.Property<int?>("Customer_Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Customer_Id"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Customer_Id"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Customer_Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Customer_Email")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Customer_Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Customer_Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level_ID")
+                    b.Property<int?>("Customer_Point")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Level_ID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Customer_Id");
 
@@ -172,26 +180,25 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.CustomerLevel", b =>
                 {
-                    b.Property<int>("Level_ID")
+                    b.Property<int?>("Level_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Level_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Level_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<string>("Level_Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("PointApply")
+                    b.Property<int?>("PointApply")
                         .HasColumnType("int");
 
                     b.HasKey("Level_ID");
@@ -570,6 +577,9 @@ namespace Cafe_Management.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Customer_ID")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
@@ -577,6 +587,9 @@ namespace Cafe_Management.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Staff_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.Property<int>("TotalPrice")
@@ -616,6 +629,9 @@ namespace Cafe_Management.Migrations
                     b.Property<int>("Receipt_ID")
                         .HasColumnType("int");
 
+                    b.Property<int>("status")
+                        .HasColumnType("int");
+
                     b.HasKey("Detail_ID");
 
                     b.ToTable("ReceiptDetail", (string)null);
@@ -623,29 +639,32 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.RecipeRaw", b =>
                 {
-                    b.Property<int>("Recipe_ID")
+                    b.Property<int?>("Recipe_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Recipe_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Recipe_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Ingredient_Raw")
+                    b.Property<int?>("Ingredient_Raw")
                         .HasColumnType("int");
 
-                    b.Property<int>("Ingredient_Result")
+                    b.Property<int?>("Ingredient_Result")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Quantity")
+                    b.Property<double?>("Quantity")
                         .HasColumnType("float");
+
+                    b.Property<int?>("Unit")
+                        .HasColumnType("int");
 
                     b.HasKey("Recipe_ID");
 
@@ -654,26 +673,25 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.SpoiledIngredient", b =>
                 {
-                    b.Property<int>("Spoiled_ID")
+                    b.Property<int?>("Spoiled_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Spoiled_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Spoiled_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Reason")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Staff_ID")
+                    b.Property<int?>("Staff_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Spoiled_ID");
@@ -717,38 +735,34 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.Staff", b =>
                 {
-                    b.Property<int>("Staff_ID")
+                    b.Property<int?>("Staff_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Staff_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Staff_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Password")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("StaffGroup_ID")
+                    b.Property<int?>("StaffGroup_ID")
                         .HasColumnType("int");
 
                     b.Property<string>("Staff_FullName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Staff_Phone")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Username")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Staff_ID");
@@ -758,23 +772,22 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.StaffGroup", b =>
                 {
-                    b.Property<int>("StaffGroup_ID")
+                    b.Property<int?>("StaffGroup_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("StaffGroup_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("StaffGroup_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffGroup_Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("StaffGroup_ID");
@@ -793,7 +806,7 @@ namespace Cafe_Management.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<DateTime>("ModifiedDate")
@@ -812,31 +825,31 @@ namespace Cafe_Management.Migrations
 
             modelBuilder.Entity("Cafe_Management.Core.Entities.StoreIngredient", b =>
                 {
-                    b.Property<int>("Store_ID")
+                    b.Property<int?>("Store_ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Store_ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int?>("Store_ID"), 1L, 1);
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Ingredient_ID")
+                    b.Property<int?>("Ingredient_ID")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsActive")
+                    b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Price")
+                    b.Property<int?>("Price")
                         .HasColumnType("int");
 
-                    b.Property<double>("Quality")
+                    b.Property<double?>("Quality")
                         .HasColumnType("float");
 
-                    b.Property<int>("Warehouse_ID")
+                    b.Property<int?>("Warehouse_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Store_ID");

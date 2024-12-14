@@ -141,5 +141,44 @@ namespace Cafe_Management.Controllers
             }
         }
 
+        [HttpGet("id")]
+        public async Task<IActionResult>getProductById(int id)
+        {
+            try
+            {
+                var product =await _productService.GetProductByIdAsync(id);
+                APIResult result = new APIResult();
+                if (product != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = product,
+                        Message = "success",
+                        Status = 200
+                    };
+                    return Ok(result);
+
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Not found product",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+            }catch(Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = "something went wrong",
+                    Status = 400
+                });
+            }
+        }
+       
+
     }
 }

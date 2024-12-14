@@ -97,6 +97,8 @@ builder.Services.AddScoped<RecipeRawService>();
 //Cuppon
 builder.Services.AddScoped<ICupponRepository, CupponRepository>();
 builder.Services.AddScoped<CupponService>();
+//vnpay
+builder.Services.AddScoped<VNpayService>();
 var app = builder.Build();
 app.UseCors("CorsApi");
 // Configure the HTTP request pipeline
