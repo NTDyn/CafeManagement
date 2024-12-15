@@ -54,7 +54,7 @@ namespace Cafe_Management.Infrastructure.Repositories
             BatchRecipe.CreatedDate = DateTime.Now;
             BatchRecipe.ModifiedDate = DateTime.Now;
             Ingredient? ingredientBatch = await _context.Ingredient.SingleOrDefaultAsync(x => x.Ingredient_ID == BatchRecipe.IngredientResult_ID && x.Ingredient_Type == 1);
-            double TotalQuantity = (double)(BatchRecipe.Unit == 2 ? (BatchRecipe.Quality * ingredientBatch.MaxPerTransfer * ingredientBatch.TransferPerMin) : BatchRecipe.Unit == 1 ? (BatchRecipe.Quality * ingredientBatch.TransferPerMin) : BatchRecipe.Quality); ;
+            double TotalQuantity = (double)(BatchRecipe.Unit == 2 ? (BatchRecipe.Quality * ingredientBatch.MaxPerTransfer * ingredientBatch.TransferPerMin) : BatchRecipe.Unit == 1 ? (BatchRecipe.Quality * ingredientBatch.TransferPerMin) : BatchRecipe.Quality); 
 
             StoreIngredient? storeIngredient = await _context.StoreIngredient.Where(x => x.Ingredient_ID == BatchRecipe.IngredientResult_ID).SingleOrDefaultAsync();
             if (storeIngredient != null)
@@ -104,7 +104,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                         add.Warehouse_ID = 0;
                         add.Ingredient_ID = recipe.Ingredient_Raw;
                         add.Price = 0;
-                        add.Quality = Quantity;
+                        add.Quality =- Quantity;
                         add.IsActive = true;
                         add.CreatedDate = DateTime.Now;
                         add.ModifiedDate = DateTime.Now;

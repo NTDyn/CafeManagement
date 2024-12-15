@@ -167,19 +167,39 @@ namespace Cafe_Management.Infrastructure.Repositories
                List<DetaiImportWithIngredientDto>  detail = await getDetailwithIgrdient(link.Link_ID);
                 foreach (var item in detail)
                 {
-                   
-                    var store = new StoreIngredient
+                    Ingredient? ingredientAdd = await _appDbContext.Ingredient.SingleOrDefaultAsync(x => x.Ingredient_ID == item.Ingredient_ID);
+                    double TotalQuantity = (double)(item.Unit == 2 ? (item.Quality * ingredientAdd.MaxPerTransfer * ingredientAdd.TransferPerMin) : item.Unit == 1 ? (item.Quality * ingredientAdd.TransferPerMin) : item.Quality);
+                    StoreIngredient? storeIngredient = await _appDbContext.StoreIngredient.Where(x => x.Ingredient_ID == item.Ingredient_ID).SingleOrDefaultAsync();
+                    if (storeIngredient != null)
                     {
-                        Warehouse_ID = 1,
-                        Ingredient_ID = item.Ingredient_ID,
-                        Price = item.Price,
-                        Quality = item.Quality,
-                        IsActive = true,
-                        CreatedDate = DateTime.Now,
-                        ModifiedDate = DateTime.Now
-                    };
+                        //Cong KHO
+                        double Quan = (double)storeIngredient.Quality + TotalQuantity;
+                        storeIngredient.Quality = Quan;
+                    }
+                    else
+                    {
+                        StoreIngredient addBat = new StoreIngredient();
+                        addBat.Warehouse_ID = 0;
+                        addBat.Ingredient_ID = item.Ingredient_ID;
+                        addBat.Price = 0;
+                        addBat.Quality = TotalQuantity;
+                        addBat.IsActive = true;
+                        addBat.CreatedDate = DateTime.Now;
+                        addBat.ModifiedDate = DateTime.Now;
+                        await _appDbContext.StoreIngredient.AddAsync(addBat);
+                    }
+                    //var store = new StoreIngredient
+                    //{
+                    //    Warehouse_ID = 1,
+                    //    Ingredient_ID = item.Ingredient_ID,
+                    //    Price = item.Price,
+                    //    Quality = item.Quality,
+                    //    IsActive = true,
+                    //    CreatedDate = DateTime.Now,
+                    //    ModifiedDate = DateTime.Now
+                    //};
 
-                    await _appDbContext.StoreIngredient.AddAsync(store);
+                    //await _appDbContext.StoreIngredient.AddAsync(store);
                     await _appDbContext.SaveChangesAsync();
 
 

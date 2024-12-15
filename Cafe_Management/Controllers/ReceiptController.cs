@@ -299,6 +299,65 @@ namespace Cafe_Management.Controllers
                 });
             }
         }
+        [HttpPut("handleDeny")]
+        public async Task<IActionResult> handleDeny([FromBody] CheckoutFromCartDto checkout)
+        {
+            try
+            {
+               await _receiptService.handleDeny(checkout.receipt, checkout.listReceipt);
+                return Ok(new APIResult
+                {
+                    Message = "successful",
+                    Status = 200
+
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpGet("showReceiptInAdmin")]
+        public async Task<IActionResult> showReceiptInAdmin()
+        {
+            try
+            {
+                var detail = await _receiptService.showReceiptInAdmin();
+                APIResult result = new APIResult();
+                if (detail != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = detail,
+                        Message = "successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "successful",
+                        Status = 201
+                    };
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
 
     }
 }

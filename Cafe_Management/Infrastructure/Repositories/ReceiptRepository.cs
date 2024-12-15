@@ -10,7 +10,7 @@ using System.Runtime.Intrinsics.Arm;
 
 namespace Cafe_Management.Infrastructure.Repositories
 {
-    public class ReceiptRepository: IReceiptRepository
+    public class ReceiptRepository : IReceiptRepository
     {
         private readonly AppDbContext _context;
         public ReceiptRepository(AppDbContext context)
@@ -46,7 +46,7 @@ namespace Cafe_Management.Infrastructure.Repositories
             return JoinData;
         }
 
-        public async Task Create(Receipt Receipt )
+        public async Task Create(Receipt Receipt)
         {
             Receipt.CreatedDate = DateTime.Now;
             Receipt.ModifiedDate = DateTime.Now;
@@ -54,17 +54,17 @@ namespace Cafe_Management.Infrastructure.Repositories
             var maxId = await _context.Receipt.MaxAsync(p => (int?)p.Receipt_ID) ?? 0;
 
             int ID = maxId + 1;
-            if (Receipt.Details != null &&  Receipt.Details.Count > 0)
+            if (Receipt.Details != null && Receipt.Details.Count > 0)
             {
-                
+
                 foreach (var d in Receipt.Details) {
-                    if(d.Quantity > 0)
+                    if (d.Quantity > 0)
                     {
                         TotalPrice += d.Quantity * d.Price;
                         d.Receipt_ID = ID;
                         await _context.ReceiptDetail.AddAsync(d);
                         List<ProductRecipe> ProductRecipes = await _context.ProductRecipe.Where(x => x.Product_ID == d.Product_ID).ToListAsync();
-                        foreach (var recipe in ProductRecipes) 
+                        foreach (var recipe in ProductRecipes)
                         {
 
                             double TotalRecipe = 0;
@@ -74,7 +74,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                                 TotalRecipe = (double)(recipe.Unit == 2 ? (recipe.Unit * ingredient.MaxPerTransfer * ingredient.TransferPerMin) : recipe.Unit == 1 ? (recipe.Quantity * ingredient.TransferPerMin) : recipe.Quantity);
                             }
                             StoreIngredient? storeIngredient = await _context.StoreIngredient.Where(x => x.Ingredient_ID == recipe.Ingredient_ID).SingleOrDefaultAsync();
-                            if (storeIngredient != null) 
+                            if (storeIngredient != null)
                             {
                                 //TRU KHO
                                 double Quan = (double)storeIngredient.Quality - TotalRecipe;
@@ -91,44 +91,44 @@ namespace Cafe_Management.Infrastructure.Repositories
                             }
                         }
                     }
-                    
+
                 }
-                
+
             }
             Receipt.TotalPrice = TotalPrice;
-            if(Receipt.Cuppon_ID != null)
+            if (Receipt.Cuppon_ID != null)
             {
                 var cuppon = await _context.Cuppon.FindAsync(Receipt.Cuppon_ID);
                 double priceDis = 0.0;
-                if(cuppon.Cuppon_Type == 0)
+                if (cuppon.Cuppon_Type == 0)
                 {
                     priceDis = (double)((double)cuppon.Disscount / 100 * Receipt.TotalPrice);
                 }
-                if(cuppon.Cuppon_Type == 1)
+                if (cuppon.Cuppon_Type == 1)
                 {
                     priceDis = (double)cuppon.Disscount;
                 }
                 HistoryDisscount hd = new HistoryDisscount
                 {
-                    Customer_ID = (int) Receipt.Customer_ID,
+                    Customer_ID = (int)Receipt.Customer_ID,
                     Cuppon_ID = (int)cuppon.Cuppon_ID,
                     PriceDisscount = (int)priceDis,
-                    Receipt_ID =(int) ID,
+                    Receipt_ID = (int)ID,
                     IsActive = true,
                     CreatedDate = DateTime.Now,
                     ModifiedDate = DateTime.Now
                 };
                 await _context.HistoryDisscount.AddAsync(hd);
-                Receipt.TotalPrice =(int) (TotalPrice - priceDis);
+                Receipt.TotalPrice = (int)(TotalPrice - priceDis);
             }
-            
+
             await _context.Receipt.AddAsync(Receipt);
             await _context.SaveChangesAsync();
         }
 
         public async Task CreateReceiptCheckout(Receipt receipt)
         {
-           
+
             var newReceipt = new Receipt
             {
                 Staff_ID = receipt.Staff_ID,
@@ -143,11 +143,11 @@ namespace Cafe_Management.Infrastructure.Repositories
             await _context.Receipt.AddAsync(newReceipt);
             await _context.SaveChangesAsync();
 
-           
+
             if (receipt.Details != null && receipt.Details.Count > 0)
             {
 
-                foreach(var item in receipt.Details)
+                foreach (var item in receipt.Details)
                 {
                     var receiptDetal = new ReceiptDetail
                     {
@@ -156,17 +156,17 @@ namespace Cafe_Management.Infrastructure.Repositories
                         Quantity = item.Quantity,
                         Price = item.Price,
                         IsActive = true,
-                        status=1,
+                        status = 1,
                         CreatedDate = DateTime.Now,
                         ModifiedDate = DateTime.Now
                     };
                     await _context.ReceiptDetail.AddAsync(receiptDetal);
-                    
+
 
                 }
                 await _context.SaveChangesAsync();
             }
-          }
+        }
 
 
 
@@ -200,7 +200,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
 
                 // Thêm chi tiết hóa đơn (sản phẩm) vào giỏ hàng mới
-                receiptDetail.Receipt_ID = (int) newReceipt.Receipt_ID;
+                receiptDetail.Receipt_ID = (int)newReceipt.Receipt_ID;
                 receiptDetail.CreatedDate = DateTime.Now;
                 receiptDetail.ModifiedDate = DateTime.Now;
                 receiptDetail.IsActive = true;
@@ -231,7 +231,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 else
                 {
                     // Thêm sản phẩm mới vào giỏ hàng nếu chưa có
-                    receiptDetail.Receipt_ID =(int) existingCart.Receipt_ID;
+                    receiptDetail.Receipt_ID = (int)existingCart.Receipt_ID;
                     receiptDetail.CreatedDate = DateTime.Now;
                     receiptDetail.ModifiedDate = DateTime.Now;
                     receiptDetail.IsActive = true;
@@ -240,7 +240,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                     await _context.ReceiptDetail.AddAsync(receiptDetail);
                 }
 
-         
+
             }
 
             // Lưu thay đổi vào cơ sở dữ liệu
@@ -249,11 +249,11 @@ namespace Cafe_Management.Infrastructure.Repositories
 
         }
 
-    
 
-       public async Task<IEnumerable<CartDto>> GetCartByIdCustomer(int id)
+
+        public async Task<IEnumerable<CartDto>> GetCartByIdCustomer(int id)
         {
-             List<Receipt> receipt = await _context.Receipt.Where(r => r.Customer_ID == id && r.Status == 0).ToListAsync();
+            List<Receipt> receipt = await _context.Receipt.Where(r => r.Customer_ID == id && r.Status == 0).ToListAsync();
             List<ReceiptDetail> detailReceipt = await _context.ReceiptDetail.Where(r => r.status == 0).ToListAsync();
             List<Product> product = await _context.Products.ToListAsync();
             var JoinData = (from h in receipt
@@ -270,17 +270,17 @@ namespace Cafe_Management.Infrastructure.Repositories
                                 ProductName = p.Product_Name,
                                 Product_ID = d.Product_ID,
                                 Quantity = d.Quantity,
-                                Product_Image=p.Product_Image,
-                                Detail_ID =d.Detail_ID
+                                Product_Image = p.Product_Image,
+                                Detail_ID = d.Detail_ID
                             }).ToList();
             return JoinData;
         }
 
-        public async Task <IEnumerable<CartDto>> GetDetailReceiptById(int id)
+        public async Task<IEnumerable<CartDto>> GetDetailReceiptById(int id)
         {
 
-            List<Receipt> receipt = await _context.Receipt.Where(r =>r.Status!=0 && r.Receipt_ID==id).ToListAsync();
-            List<ReceiptDetail> detailReceipt = await _context.ReceiptDetail.Where(r => r.status!=0&&r.Receipt_ID==id).ToListAsync();
+            List<Receipt> receipt = await _context.Receipt.Where(r => r.Status != 0 && r.Receipt_ID == id).ToListAsync();
+            List<ReceiptDetail> detailReceipt = await _context.ReceiptDetail.Where(r => r.status != 0 && r.Receipt_ID == id).ToListAsync();
             List<Product> product = await _context.Products.ToListAsync();
             var JoinData = (from h in receipt
                             join d in detailReceipt on h.Receipt_ID equals d.Receipt_ID
@@ -307,17 +307,17 @@ namespace Cafe_Management.Infrastructure.Repositories
             ReceiptDetail findDetailReceipt = await _context.ReceiptDetail.FirstOrDefaultAsync(d => d.Detail_ID == id);
             if (findDetailReceipt != null)
             {
-                if(findDetailReceipt.Quantity+quantity <= 0)
+                if (findDetailReceipt.Quantity + quantity <= 0)
                 {
                     _context.ReceiptDetail.Remove(findDetailReceipt);
-                   
+
                 }
                 else
                 {
                     findDetailReceipt.Quantity = findDetailReceipt.Quantity + quantity;
                     _context.ReceiptDetail.Update(findDetailReceipt);
                 }
-              
+
                 await _context.SaveChangesAsync();
             }
         }
@@ -337,14 +337,14 @@ namespace Cafe_Management.Infrastructure.Repositories
             Receipt findReceipt = await _context.Receipt.FirstOrDefaultAsync(r => r.Receipt_ID == receipt.Receipt_ID);
             if (receipt != null)
             {
-                findReceipt.Status = receipt.Status;
+                findReceipt.Status = 1;
                 _context.Receipt.Update(findReceipt);
-              foreach(var item in receiptDetail)
+                foreach (var item in receiptDetail)
                 {
                     ReceiptDetail findDetail = await _context.ReceiptDetail.FirstOrDefaultAsync(d => d.Detail_ID == item.Detail_ID);
                     if (findDetail != null)
                     {
-                        findDetail.status = item.status;
+                        findDetail.status = 1;
                         _context.ReceiptDetail.Update(findDetail);
                     }
                 }
@@ -355,7 +355,7 @@ namespace Cafe_Management.Infrastructure.Repositories
 
         public async Task<IEnumerable<ReceiptDto>> getReceiptByStatus(int status)
         {
-            List<Receipt> Receipt = await _context.Receipt.Where(r=>r.Status==status).ToListAsync();
+            List<Receipt> Receipt = await _context.Receipt.Where(r => r.Status == status).ToListAsync();
             List<Customer> Customer = await _context.Customer.Where(c => c.IsActive == true).ToListAsync();
             List<ReceiptDetail> receiptDetail = await _context.ReceiptDetail.Where(r => r.status == status).ToListAsync();
             var JoinData = (from r in receiptDetail
@@ -379,7 +379,61 @@ namespace Cafe_Management.Infrastructure.Repositories
                                 Customer_ID = grp.Key.Customer_ID,
                                 Status = grp.Key.Status,
                                 IsActive = grp.Key.IsActive,
-                                TotalPrice = grp.Sum(x => x.Price*x.Quantity), 
+                                TotalPrice = grp.Sum(x => x.Price * x.Quantity),
+                                CreatedDate = grp.Key.CreatedDate,
+                                ModifiedDate = grp.Key.ModifiedDate,
+                                customer_Name = grp.Key.Customer_Name
+                            }).ToList();
+            return JoinData;
+        }
+        public async Task handleDeny(Receipt receipt, List<ReceiptDetail> receiptDetail)
+        {
+            Receipt findReceipt = await _context.Receipt.FirstOrDefaultAsync(r => r.Receipt_ID == receipt.Receipt_ID);
+            if (receipt != null)
+            {
+                findReceipt.Status = 2;
+                _context.Receipt.Update(findReceipt);
+                foreach (var item in receiptDetail)
+                {
+                    ReceiptDetail findDetail = await _context.ReceiptDetail.FirstOrDefaultAsync(d => d.Detail_ID == item.Detail_ID);
+                    if (findDetail != null)
+                    {
+                        findDetail.status = 2;
+                        _context.ReceiptDetail.Update(findDetail);
+                    }
+                }
+                await _context.SaveChangesAsync();
+
+            }
+        }
+
+        public async Task<IEnumerable<ReceiptDto>> showReceipteInAdmin()
+        {
+            List<Receipt> Receipt = await _context.Receipt.Where(r => r.Status !=0).ToListAsync();
+            List<Customer> Customer = await _context.Customer.Where(c => c.IsActive == true).ToListAsync();
+            List<ReceiptDetail> receiptDetail = await _context.ReceiptDetail.Where(r => r.status !=0).ToListAsync();
+            var JoinData = (from r in receiptDetail
+                            join h in Receipt on r.Receipt_ID equals h.Receipt_ID
+                            join c in Customer on h.Customer_ID equals c.Customer_Id
+                            group r by new
+                            {
+                                h.Receipt_ID,
+                                h.Staff_ID,
+                                h.Customer_ID,
+                                h.Status,
+                                h.IsActive,
+                                h.CreatedDate,
+                                h.ModifiedDate,
+                                c.Customer_Name
+                            } into grp
+                            select new ReceiptDto
+                            {
+                                Receipt_ID = grp.Key.Receipt_ID,
+                                Staff_ID = grp.Key.Staff_ID,
+                                Customer_ID = grp.Key.Customer_ID,
+                                Status = grp.Key.Status,
+                                IsActive = grp.Key.IsActive,
+                                TotalPrice = grp.Sum(x => x.Price * x.Quantity),
                                 CreatedDate = grp.Key.CreatedDate,
                                 ModifiedDate = grp.Key.ModifiedDate,
                                 customer_Name = grp.Key.Customer_Name

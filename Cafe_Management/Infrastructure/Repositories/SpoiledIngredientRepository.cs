@@ -79,10 +79,10 @@ namespace Cafe_Management.Infrastructure.Repositories
                         else
                         {
                             StoreIngredient add = new StoreIngredient();
-                            add.Warehouse_ID = 0;
+                            add.Warehouse_ID = 1;
                             add.Ingredient_ID = d.Ingredient_ID;
                             add.Price = 0;
-                            add.Quality = TotalQuantity;
+                            add.Quality = - TotalQuantity;
                             await _context.StoreIngredient.AddAsync(add);
                         }
                     }
