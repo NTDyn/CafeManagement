@@ -212,6 +212,59 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Cafe_Management.Controllers.HistoryDiscountController",
+    "Method": "GetHistoryDiscounts",
+    "RelativePath": "api/HistoryDiscount",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "History_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "Customer_ID",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.HistoryDiscountController",
+    "Method": "AddHistoryDiscount",
+    "RelativePath": "api/HistoryDiscount",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "historyDisscount",
+        "Type": "Cafe_Management.Core.Entities.HistoryDisscount",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.HistoryDiscountController",
+    "Method": "UpdateHistoryDiscount",
+    "RelativePath": "api/HistoryDiscount",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "historyDisscount",
+        "Type": "Cafe_Management.Core.Entities.HistoryDisscount",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Cafe_Management.Controllers.IngredientController",
     "Method": "GetAllIngredients",
     "RelativePath": "api/Ingredient",
@@ -722,6 +775,43 @@
   },
   {
     "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "ChangeQuantity",
+    "RelativePath": "api/Receipt/changeQuantity",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "quantity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "changeStatus",
+    "RelativePath": "api/Receipt/changeStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "checkout",
+        "Type": "Cafe_Management.Infrastructure.Model.CheckoutFromCartDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
     "Method": "createReceiptCheckout",
     "RelativePath": "api/Receipt/createCheckout",
     "HttpMethod": "POST",
@@ -738,6 +828,22 @@
   },
   {
     "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "deleteDetailReceipt",
+    "RelativePath": "api/Receipt/deleteDetail",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
     "Method": "getCart",
     "RelativePath": "api/Receipt/getcart",
     "HttpMethod": "GET",
@@ -746,6 +852,38 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "getDetailByIdReceipt",
+    "RelativePath": "api/Receipt/getDetailById",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Cafe_Management.Controllers.ReceiptController",
+    "Method": "getReceiptByStatus",
+    "RelativePath": "api/Receipt/getReceiptByStatus",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
         "Type": "System.Int32",
         "IsRequired": false
       }

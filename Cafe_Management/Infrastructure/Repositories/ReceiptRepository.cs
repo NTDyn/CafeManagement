@@ -2,9 +2,11 @@
 using Cafe_Management.Core.Entities;
 using Cafe_Management.Core.Interfaces;
 using Cafe_Management.Infrastructure.Data;
+using Cafe_Management.Infrastructure.Model;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Cafe_Management.Infrastructure.Repositories
 {
@@ -149,7 +151,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 {
                     var receiptDetal = new ReceiptDetail
                     {
-                        Receipt_ID = newReceipt.Receipt_ID,
+                        Receipt_ID = (int)newReceipt.Receipt_ID,
                         Product_ID = item.Product_ID,
                         Quantity = item.Quantity,
                         Price = item.Price,
@@ -198,7 +200,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
 
                 // Thêm chi tiết hóa đơn (sản phẩm) vào giỏ hàng mới
-                receiptDetail.Receipt_ID = newReceipt.Receipt_ID;
+                receiptDetail.Receipt_ID = (int) newReceipt.Receipt_ID;
                 receiptDetail.CreatedDate = DateTime.Now;
                 receiptDetail.ModifiedDate = DateTime.Now;
                 receiptDetail.IsActive = true;
@@ -208,7 +210,7 @@ namespace Cafe_Management.Infrastructure.Repositories
             }
             else
             {
-                // Lấy danh sách chi tiết hóa đơn (sản phẩm) của giỏ hàng hiện tại
+                // Lấy danh sách chi tiết hóa đơn  của giỏ hàng hiện tại
                 List<ReceiptDetail> listDetail = await _context.ReceiptDetail
                     .Where(r => r.Receipt_ID == existingCart.Receipt_ID && r.status == 0)
                     .ToListAsync();
@@ -229,7 +231,7 @@ namespace Cafe_Management.Infrastructure.Repositories
                 else
                 {
                     // Thêm sản phẩm mới vào giỏ hàng nếu chưa có
-                    receiptDetail.Receipt_ID = existingCart.Receipt_ID;
+                    receiptDetail.Receipt_ID =(int) existingCart.Receipt_ID;
                     receiptDetail.CreatedDate = DateTime.Now;
                     receiptDetail.ModifiedDate = DateTime.Now;
                     receiptDetail.IsActive = true;
@@ -249,28 +251,146 @@ namespace Cafe_Management.Infrastructure.Repositories
 
     
 
-       public async Task<IEnumerable<Receipt>> GetCartByIdCustomer(int id)
+       public async Task<IEnumerable<CartDto>> GetCartByIdCustomer(int id)
         {
              List<Receipt> receipt = await _context.Receipt.Where(r => r.Customer_ID == id && r.Status == 0).ToListAsync();
             List<ReceiptDetail> detailReceipt = await _context.ReceiptDetail.Where(r => r.status == 0).ToListAsync();
+            List<Product> product = await _context.Products.ToListAsync();
             var JoinData = (from h in receipt
-                            join d in detailReceipt
-                            on h.Receipt_ID equals d.Receipt_ID
-                            into groups
-                            select new Receipt
+                            join d in detailReceipt on h.Receipt_ID equals d.Receipt_ID
+                            join p in product on d.Product_ID equals p.Product_ID
+                            select new CartDto
                             {
                                 Receipt_ID = h.Receipt_ID,
-                                Staff_ID = h.Staff_ID,
                                 Customer_ID = h.Customer_ID,
                                 Status = h.Status,
-                                IsActive = h.IsActive,
-                                TotalPrice = h.TotalPrice,
                                 CreatedDate = h.CreatedDate,
                                 ModifiedDate = h.ModifiedDate,
-                                Details = groups.ToList()
+                                Price = (int)p.Price,
+                                ProductName = p.Product_Name,
+                                Product_ID = d.Product_ID,
+                                Quantity = d.Quantity,
+                                Product_Image=p.Product_Image,
+                                Detail_ID =d.Detail_ID
                             }).ToList();
             return JoinData;
         }
+
+        public async Task <IEnumerable<CartDto>> GetDetailReceiptById(int id)
+        {
+
+            List<Receipt> receipt = await _context.Receipt.Where(r =>r.Status!=0 && r.Receipt_ID==id).ToListAsync();
+            List<ReceiptDetail> detailReceipt = await _context.ReceiptDetail.Where(r => r.status!=0&&r.Receipt_ID==id).ToListAsync();
+            List<Product> product = await _context.Products.ToListAsync();
+            var JoinData = (from h in receipt
+                            join d in detailReceipt on h.Receipt_ID equals d.Receipt_ID
+                            join p in product on d.Product_ID equals p.Product_ID
+                            select new CartDto
+                            {
+                                Receipt_ID = h.Receipt_ID,
+                                Customer_ID = h.Customer_ID,
+                                Status = h.Status,
+                                CreatedDate = h.CreatedDate,
+                                ModifiedDate = h.ModifiedDate,
+                                Price = (int)p.Price,
+                                ProductName = p.Product_Name,
+                                Product_ID = d.Product_ID,
+                                Quantity = d.Quantity,
+                                Product_Image = p.Product_Image,
+                                Detail_ID = d.Detail_ID
+                            }).ToList();
+            return JoinData;
+        }
+
+        public async Task ChangeQuantity(int id, int quantity)
+        {
+            ReceiptDetail findDetailReceipt = await _context.ReceiptDetail.FirstOrDefaultAsync(d => d.Detail_ID == id);
+            if (findDetailReceipt != null)
+            {
+                if(findDetailReceipt.Quantity+quantity <= 0)
+                {
+                    _context.ReceiptDetail.Remove(findDetailReceipt);
+                   
+                }
+                else
+                {
+                    findDetailReceipt.Quantity = findDetailReceipt.Quantity + quantity;
+                    _context.ReceiptDetail.Update(findDetailReceipt);
+                }
+              
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteDetailReceipt(int id)
+        {
+            ReceiptDetail findDetailReceipt = await _context.ReceiptDetail.FirstOrDefaultAsync(d => d.Detail_ID == id);
+            if (findDetailReceipt != null)
+            {
+                _context.ReceiptDetail.Remove(findDetailReceipt);
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task CheckoutFromCart(Receipt receipt, List<ReceiptDetail> receiptDetail)
+        {
+            Receipt findReceipt = await _context.Receipt.FirstOrDefaultAsync(r => r.Receipt_ID == receipt.Receipt_ID);
+            if (receipt != null)
+            {
+                findReceipt.Status = receipt.Status;
+                _context.Receipt.Update(findReceipt);
+              foreach(var item in receiptDetail)
+                {
+                    ReceiptDetail findDetail = await _context.ReceiptDetail.FirstOrDefaultAsync(d => d.Detail_ID == item.Detail_ID);
+                    if (findDetail != null)
+                    {
+                        findDetail.status = item.status;
+                        _context.ReceiptDetail.Update(findDetail);
+                    }
+                }
+                await _context.SaveChangesAsync();
+
+            }
+        }
+
+        public async Task<IEnumerable<ReceiptDto>> getReceiptByStatus(int status)
+        {
+            List<Receipt> Receipt = await _context.Receipt.Where(r=>r.Status==status).ToListAsync();
+            List<Customer> Customer = await _context.Customer.Where(c => c.IsActive == true).ToListAsync();
+            List<ReceiptDetail> receiptDetail = await _context.ReceiptDetail.Where(r => r.status == status).ToListAsync();
+            var JoinData = (from r in receiptDetail
+                            join h in Receipt on r.Receipt_ID equals h.Receipt_ID
+                            join c in Customer on h.Customer_ID equals c.Customer_Id
+                            group r by new
+                            {
+                                h.Receipt_ID,
+                                h.Staff_ID,
+                                h.Customer_ID,
+                                h.Status,
+                                h.IsActive,
+                                h.CreatedDate,
+                                h.ModifiedDate,
+                                c.Customer_Name
+                            } into grp
+                            select new ReceiptDto
+                            {
+                                Receipt_ID = grp.Key.Receipt_ID,
+                                Staff_ID = grp.Key.Staff_ID,
+                                Customer_ID = grp.Key.Customer_ID,
+                                Status = grp.Key.Status,
+                                IsActive = grp.Key.IsActive,
+                                TotalPrice = grp.Sum(x => x.Price*x.Quantity), 
+                                CreatedDate = grp.Key.CreatedDate,
+                                ModifiedDate = grp.Key.ModifiedDate,
+                                customer_Name = grp.Key.Customer_Name
+                            }).ToList();
+            return JoinData;
+        }
+
+
+
+
+
 
 
 
