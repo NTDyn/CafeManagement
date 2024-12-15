@@ -10,7 +10,7 @@ namespace Cafe_Management.Controllers
     [EnableCors("CorsApi")]
     [ApiController]
     [Route("api/[controller]")]
-    public class ReceiptController:ControllerBase
+    public class ReceiptController : ControllerBase
     {
         private readonly ReceiptService _receiptService;
         private readonly ProductService _productService;
@@ -56,7 +56,7 @@ namespace Cafe_Management.Controllers
                     result.Message = "Staff_ID cannot be empty";
                     return BadRequest();
                 }
-                if(Receipt.Details == null || Receipt.Details.Count == 0)
+                if (Receipt.Details == null || Receipt.Details.Count == 0)
                 {
                     result.Status = 0;
                     result.Message = "Details cannot be empty";
@@ -64,7 +64,7 @@ namespace Cafe_Management.Controllers
                 }
                 else
                 {
-                    foreach (var item in Receipt.Details) { 
+                    foreach (var item in Receipt.Details) {
                         var Product = await _productService.GetProductByIdAsync(item.Product_ID);
                         if (Product == null) {
                             result.Status = 0;
@@ -98,7 +98,7 @@ namespace Cafe_Management.Controllers
                     Message = "successful",
                     Status = 200
                 });
-            }catch(Exception ex)
+            } catch (Exception ex)
             {
                 return BadRequest(new APIResult
                 {
@@ -129,7 +129,7 @@ namespace Cafe_Management.Controllers
             }
         }
         [HttpGet("getcart")]
-        public async Task<IActionResult> getCart( int id)
+        public async Task<IActionResult> getCart(int id)
         {
             try
             {
@@ -152,6 +152,141 @@ namespace Cafe_Management.Controllers
                         Data = null,
                         Message = "Cart is Empty",
                         Status = 200
+                    };
+                    return Ok(result);
+                }
+            } catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpPut("changeQuantity")]
+        public async Task<IActionResult> ChangeQuantity(int id, int quantity)
+        {
+
+            try
+            {
+                await _receiptService.ChangeQuantityDetailReceipt(id, quantity);
+                return Ok(new APIResult
+                {
+                    Status = 200,
+                    Message = "update successful"
+                });
+            } catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Status = 400,
+                    Message = ex.Message
+                });
+            }
+        }
+        [HttpDelete("deleteDetail")]
+        public async Task<IActionResult> deleteDetailReceipt(int id)
+        {
+            try
+            {
+                await _receiptService.DeletaDetailReceipt(id);
+                return Ok(new APIResult
+                {
+                    Message = "successful",
+                    Status = 200
+                });
+            } catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpPut("changeStatus")]
+        public async Task<IActionResult> changeStatus([FromBody] CheckoutFromCartDto checkout)
+        {
+            try
+            {
+                await _receiptService.ChangeStatusCart(checkout.receipt, checkout.listReceipt);
+                return Ok(new APIResult
+                {
+                    Message = "successful",
+                    Status = 200
+
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpGet("getReceiptByStatus")]
+        public async Task<IActionResult> getReceiptByStatus(int status)
+        {
+            try
+            {
+                var getReceipt = await _receiptService.getListReceiptByStatus(status);
+                APIResult result = new APIResult();
+                if (getReceipt != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = getReceipt,
+                        Message = "successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "Data empty",
+                        Status = 201
+                    };
+                    return Ok(result);
+                }
+            } catch (Exception ex)
+            {
+                return BadRequest(new APIResult
+                {
+                    Message = ex.Message,
+                    Status = 400
+                });
+            }
+        }
+        [HttpGet("getDetailById")]
+        public async Task<IActionResult> getDetailByIdReceipt(int id)
+        {
+            try
+            {
+                var detail = await _receiptService.getDetailReceipt(id);
+                APIResult result = new APIResult();
+                if (detail != null)
+                {
+                    result = new APIResult
+                    {
+                        Data = detail,
+                        Message = "successful",
+                        Status = 200
+                    };
+                    return Ok(result);
+                }
+                else
+                {
+                    result = new APIResult
+                    {
+                        Data = null,
+                        Message = "successful",
+                        Status = 201
                     };
                     return Ok(result);
                 }

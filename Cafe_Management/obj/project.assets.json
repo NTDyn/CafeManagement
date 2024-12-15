@@ -2518,11 +2518,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Cafe_Management.csproj",
+      "projectUniqueName": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\Cafe_Management.csproj",
       "projectName": "Cafe_Management",
-      "projectPath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Cafe_Management.csproj",
+      "projectPath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\Cafe_Management.csproj",
       "packagesPath": "C:\\Users\\hp_pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\obj\\",
+      "outputPath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\hp_pc\\AppData\\Roaming\\NuGet\\NuGet.Config",

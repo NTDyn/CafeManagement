@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ry6McA/lPu0=",
+  "dgSpecHash": "9Zwix9Bu8e0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\Cafe_Management.csproj",
+  "projectFilePath": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\Cafe_Management.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hp_pc\\.nuget\\packages\\commonservicelocator\\1.3.0\\commonservicelocator.1.3.0.nupkg.sha512",
     "C:\\Users\\hp_pc\\.nuget\\packages\\delegatedecompiler\\0.34.0\\delegatedecompiler.0.34.0.nupkg.sha512",

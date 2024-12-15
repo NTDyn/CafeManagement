@@ -1,5 +1,6 @@
 ﻿using Cafe_Management.Core.Entities;
 using Cafe_Management.Core.Interfaces;
+using Cafe_Management.Infrastructure.Model;
 
 namespace Cafe_Management.Application.Services
 {
@@ -30,9 +31,29 @@ namespace Cafe_Management.Application.Services
         {
            await _receiptRepository.CreateCart(receiptDetail,id);
         }
-        public async Task<IEnumerable<Receipt>>getCartofCustomer(int id)
+        public async Task<IEnumerable<CartDto>>getCartofCustomer(int id)
         {
             return await _receiptRepository.GetCartByIdCustomer(id);
+        }
+        public async Task ChangeQuantityDetailReceipt(int id, int quantity)
+        {
+            await _receiptRepository.ChangeQuantity(id, quantity);
+        }
+        public async Task DeletaDetailReceipt(int id)
+        {
+            await _receiptRepository.DeleteDetailReceipt(id);
+        }
+        public async Task ChangeStatusCart(Receipt receipt, List<ReceiptDetail> receiptDetail)
+        {
+            await _receiptRepository.CheckoutFromCart(receipt, receiptDetail);
+        }
+        public async Task<IEnumerable<ReceiptDto>>getListReceiptByStatus(int status)
+        {
+            return await _receiptRepository.getReceiptByStatus(status);
+        }
+        public async Task <IEnumerable<CartDto>>getDetailReceipt(int id)
+        {
+            return await _receiptRepository.GetDetailReceiptById(id);
         }
      
     }

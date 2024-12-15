@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5YlCD46hyohEXi+SF/BwpPAdDtSY4Gq+z6qN4zaH0wE=",
+  "Hash": "OoDNJxGaTvcEfYzW4O9wC99sVwBsKI/qZQtFmBbr51A=",
   "Source": "Cafe_Management",
   "BasePath": "_content/Cafe_Management",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "Cafe_Management\\wwwroot",
       "Source": "Cafe_Management",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\0.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\0.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/0.jpg",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\0.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\1.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\1.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/1.jpg",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\1.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\10.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\10.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/10.jpg",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\10.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\11.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\11.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/11.jpg",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\11.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\12.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\12.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/12.jpg",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\12.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\2.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\2.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/2.jpg",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\2.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\3.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\3.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/3.jpg",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\3.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\4.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\4.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/4.jpg",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\4.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\5.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\5.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/5.jpg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\5.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\6.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\6.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/6.jpg",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\6.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\7.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\7.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/7.jpg",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\7.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\8.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\8.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/8.jpg",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Image\\Products\\8.jpg"
     },
     {
-      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\9.jpg",
+      "Identity": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\Image\\Products\\9.jpg",
       "SourceId": "Cafe_Management",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\CafeManagement\\Cafe_Management\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\hp_pc\\.NetProject\\PROJECT\\backend2\\CafeManagement\\Cafe_Management\\wwwroot\\",
       "BasePath": "_content/Cafe_Management",
       "RelativePath": "Image/Products/9.jpg",
       "AssetKind": "All",
